@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Royal Bikers at Motorcycle Live 2026 · Hall 3, Stand 3B20</title>
+<meta name="description" content="Royal Bikers, official touring partners of Royal Enfield, invite you to the Royal Enfield stand at Motorcycle Live 2026. Hall 3, Stand 3B20, NEC Birmingham, 21 to 29 November.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0A0A0A">
+<meta property="og:title" content="You're invited: Royal Bikers at Motorcycle Live 2026">
+<meta property="og:description" content="Royal Enfield stand · Hall 3 · Stand 3B20 · NEC Birmingham · 21–29 November">
+<meta property="og:image" content="og-image.png">
+<meta property="og:type" content="website">
+<style>
+  :root{
+    --ink:#0A0A0A; --ink2:#141312; --ink3:#1d1b19; --line:#2c2926;
+    --orange:#E8590C; --orange2:#ff7a33; --cream:#F5F1EC; --muted:#b9b1a7; --dim:#7d766e;
+    --serif:Georgia,"Gelasio","Times New Roman",serif;
+    --sans:Arial,"Helvetica Neue",Helvetica,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--ink);color:var(--cream);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit}
+  img{max-width:100%}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+  .eyebrow{font-family:var(--sans);font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--orange);font-weight:700}
+  h1,h2,h3{font-family:var(--serif);font-weight:normal;line-height:1.12}
+  .btn{display:inline-flex;align-items:center;gap:10px;padding:16px 30px;border-radius:2px;font:700 15px/1 var(--sans);letter-spacing:.06em;text-transform:uppercase;text-decoration:none;cursor:pointer;border:2px solid var(--orange);transition:transform .2s,background .2s,color .2s}
+  .btn-solid{background:var(--orange);color:#fff}
+  .btn-solid:hover{background:var(--orange2);border-color:var(--orange2);transform:translateY(-2px)}
+  .btn-ghost{background:transparent;color:var(--cream);border-color:rgba(245,241,236,.5)}
+  .btn-ghost:hover{border-color:var(--cream);transform:translateY(-2px)}
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity .9s ease,transform .9s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  /* ---------- Logo ---------- */
+  .logo img{height:46px;display:block}
+  .wordmark{display:none;font-family:var(--serif);font-size:22px;letter-spacing:.22em;text-transform:uppercase;color:var(--cream)}
+  .wordmark b{color:var(--orange);font-weight:normal}
+  .logo.fallback img{display:none}
+  .logo.fallback .wordmark{display:inline-block}
+
+  /* ---------- Gate: the ride permit ---------- */
+  #gate{position:fixed;inset:0;z-index:50;display:flex;align-items:center;justify-content:center;padding:24px;
+    background:radial-gradient(ellipse at 50% 30%,#2a1508 0%,#0A0A0A 60%);transition:opacity .9s ease,visibility .9s}
+  #gate.gone{opacity:0;visibility:hidden}
+  .permit{position:relative;width:min(440px,100%);background:var(--cream);color:var(--ink);padding:30px 30px 26px;
+    box-shadow:0 30px 80px rgba(0,0,0,.6);transform:rotate(-1.5deg);transition:transform .8s cubic-bezier(.6,-0.2,.4,1.2)}
+  .permit:before,.permit:after{content:"";position:absolute;left:0;right:0;height:10px;
+    background:radial-gradient(circle at 5px 0,transparent 5px,var(--cream) 5.5px) repeat-x;background-size:14px 10px}
+  .permit:before{top:-10px;transform:rotate(180deg)}
+  .permit:after{bottom:-10px}
+  .permit.fly{transform:rotate(6deg) translateY(-120vh)}
+  .permit .row{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+  .permit .tiny{font:700 10px/1.4 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:#6b645c}
+  .permit .no{font:700 13px/1 "Courier New",monospace;color:var(--orange);letter-spacing:.08em}
+  .permit h2{font-size:30px;margin:18px 0 4px;color:var(--ink)}
+  .permit .to{font-family:var(--serif);font-style:italic;font-size:17px;color:#3c3732;margin-bottom:18px;min-height:1.4em}
+  .permit dl{display:grid;grid-template-columns:1fr 1fr;gap:14px 18px;border-top:1px dashed #b7ada2;border-bottom:1px dashed #b7ada2;padding:16px 0;margin-bottom:20px}
+  .permit dt{font:700 10px/1.3 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:#7a7168}
+  .permit dd{font-family:var(--serif);font-size:17px;color:var(--ink)}
+  .stamp-btn{display:flex;align-items:center;gap:16px;width:100%;background:none;border:0;cursor:pointer;text-align:left;font:inherit;color:inherit}
+  .stamp{position:relative;flex:0 0 92px;height:92px;border-radius:50%;border:3px solid var(--orange);color:var(--orange);
+    display:flex;align-items:center;justify-content:center;flex-direction:column;font:700 10px/1.2 var(--sans);letter-spacing:.14em;text-transform:uppercase;
+    animation:pulse 2.2s infinite}
+  .stamp:before{content:"";position:absolute;inset:5px;border-radius:50%;border:1px dashed var(--orange)}
+  .stamp strong{font-family:var(--serif);font-size:24px;letter-spacing:0;font-weight:normal;line-height:1}
+  @keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(232,89,12,.45)}50%{box-shadow:0 0 0 14px rgba(232,89,12,0)}}
+  .stamp-btn .hint{font-family:var(--serif);font-size:18px;line-height:1.3}
+  .stamp-btn .hint small{display:block;font:12px/1.5 var(--sans);color:#6b645c;margin-top:4px}
+  .inked{position:absolute;right:22px;bottom:30px;width:150px;height:150px;border:5px double var(--orange);border-radius:50%;
+    color:var(--orange);display:flex;flex-direction:column;align-items:center;justify-content:center;transform:rotate(-14deg) scale(2.4);opacity:0;
+    font:700 11px/1.25 var(--sans);letter-spacing:.16em;text-transform:uppercase;text-align:center;pointer-events:none;mix-blend-mode:multiply}
+  .inked strong{font-family:var(--serif);font-size:26px;letter-spacing:.04em;font-weight:normal}
+  .permit.stamped .inked{animation:ink .35s ease-out forwards}
+  @keyframes ink{to{transform:rotate(-14deg) scale(1);opacity:.92}}
+
+  /* ---------- Header ---------- */
+  header.top{position:absolute;top:0;left:0;right:0;z-index:5;padding:22px 0}
+  header.top .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .partner{font:700 11px/1.4 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--muted);text-align:right}
+  .partner span{color:var(--cream)}
+
+  /* ---------- Hero ---------- */
+  .hero{position:relative;min-height:100vh;display:flex;align-items:center;padding:130px 0 120px;overflow:hidden;
+    background:radial-gradient(ellipse 80% 60% at 70% 20%,rgba(232,89,12,.22),transparent 60%),linear-gradient(#0A0A0A,#120d09)}
+  .hero-inner{position:relative;z-index:2;max-width:720px}
+  .hero .eyebrow{margin-bottom:22px}
+  .hero .greet{font-family:var(--serif);font-style:italic;font-size:22px;color:var(--muted);margin-bottom:6px;min-height:1.3em}
+  .hero h1{font-size:clamp(46px,8vw,92px);letter-spacing:-.01em;margin-bottom:22px}
+  .hero h1 em{color:var(--orange);font-style:normal}
+  .hero p.lede{font-size:clamp(17px,2.1vw,20px);color:#ddd5cc;max-width:560px;margin-bottom:30px}
+  .chip{display:inline-flex;align-items:stretch;border:1px solid rgba(245,241,236,.35);margin-bottom:34px;background:rgba(10,10,10,.55);backdrop-filter:blur(4px)}
+  .chip div{padding:12px 18px;border-right:1px solid rgba(245,241,236,.2)}
+  .chip div:last-child{border-right:0;background:var(--orange);color:#fff}
+  .chip small{display:block;font:700 10px/1.2 var(--sans);letter-spacing:.2em;text-transform:uppercase;opacity:.75;margin-bottom:3px}
+  .chip b{font-family:var(--serif);font-weight:normal;font-size:22px;line-height:1.1}
+  .hero .ctas{display:flex;flex-wrap:wrap;gap:14px}
+  .hero .when{margin-top:26px;font-size:14px;letter-spacing:.06em;color:var(--muted)}
+  .scroll-cue{position:absolute;left:50%;bottom:26px;z-index:3;transform:translateX(-50%);font:700 10px/1 var(--sans);letter-spacing:.3em;text-transform:uppercase;color:var(--muted);text-decoration:none}
+  .scroll-cue:after{content:"";display:block;width:1px;height:34px;background:var(--orange);margin:10px auto 0;animation:drop 1.8s infinite}
+  @keyframes drop{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+  /* ---------- Stat bar ---------- */
+  .stats{background:var(--orange);color:#fff}
+  .stats .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
+  .stats div{padding:26px 12px;text-align:center;border-right:1px solid rgba(255,255,255,.28)}
+  .stats div:last-child{border-right:0}
+  .stats b{display:block;font-family:var(--serif);font-weight:normal;font-size:38px;line-height:1}
+  .stats span{font:700 11px/1.4 var(--sans);letter-spacing:.16em;text-transform:uppercase}
+
+  section{padding:110px 0}
+  .head{max-width:640px;margin-bottom:48px}
+  .head h2{font-size:clamp(34px,5vw,52px);margin-top:14px}
+  .head p{color:var(--muted);margin-top:16px;font-size:17px}
+
+  /* ---------- Letter ---------- */
+  .letter{background:var(--cream);color:var(--ink)}
+  .letter .wrap{display:grid;grid-template-columns:1fr 1.5fr;gap:64px;align-items:start}
+  .letter .big12{font-family:var(--serif);font-size:clamp(150px,22vw,260px);line-height:.8;color:var(--orange);letter-spacing:-.04em}
+  .letter .big12 small{display:block;font:700 13px/1.5 var(--sans);letter-spacing:.28em;text-transform:uppercase;color:var(--ink);margin-top:18px}
+  .letter h2{font-size:clamp(32px,4.4vw,46px);margin:14px 0 24px}
+  .letter p{font-family:var(--serif);font-size:19px;line-height:1.65;color:#2a2622;margin-bottom:18px}
+  .sig{margin-top:30px;display:flex;align-items:center;gap:18px}
+  .sig .names{font-family:var(--serif);font-style:italic;font-size:30px;color:var(--ink)}
+  .sig small{display:block;font:700 11px/1.5 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:#7a7168;font-style:normal}
+
+  /* ---------- On the stand ---------- */
+  .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+  .card{background:var(--ink2);border:1px solid var(--line);border-top:3px solid var(--orange);padding:30px 24px 28px;transition:transform .3s,border-color .3s}
+  .card:hover{transform:translateY(-6px);border-color:#4a443e}
+  .card svg{width:44px;height:44px;margin-bottom:22px;stroke:var(--orange);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+  .card h3{font-size:23px;margin-bottom:10px}
+  .card p{color:var(--muted);font-size:15px}
+  .card.gold{background:linear-gradient(160deg,#2a1a0c,#141312 70%);border-top-color:#d9a441}
+  .card.gold svg{stroke:#d9a441}
+
+  /* ---------- Routes ---------- */
+  .routes{background:var(--ink2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .route-line{position:relative;display:flex;flex-wrap:wrap;gap:0;counter-reset:r}
+  .route-line a{position:relative;flex:1 1 33.33%;min-width:220px;padding:26px 24px 26px 64px;border-bottom:1px solid var(--line);border-right:1px solid var(--line);text-decoration:none;transition:background .25s}
+  .route-line a:hover{background:#1f1c19}
+  .route-line a:before{counter-increment:r;content:counter(r,decimal-leading-zero);position:absolute;left:22px;top:28px;font:700 12px/1 var(--sans);color:var(--orange);letter-spacing:.1em}
+  .route-line b{display:block;font-family:var(--serif);font-weight:normal;font-size:22px;line-height:1.2}
+  .route-line span{font-size:13px;color:var(--dim);letter-spacing:.04em}
+  .includes{display:grid;grid-template-columns:repeat(3,1fr);gap:14px 30px;margin-top:54px;padding-top:40px;border-top:1px solid var(--line)}
+  .includes p{font-size:15px;color:#ddd5cc;padding-left:22px;position:relative}
+  .includes p:before{content:"";position:absolute;left:0;top:9px;width:9px;height:9px;background:var(--orange)}
+  .giveback{margin-top:34px;font-family:var(--serif);font-style:italic;font-size:18px;color:var(--muted)}
+  .giveback b{color:var(--cream);font-style:normal;font-weight:normal}
+
+  /* ---------- Where & when ---------- */
+  .where .grid{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:stretch}
+  .ticket{position:relative;background:var(--cream);color:var(--ink);display:grid;grid-template-columns:1fr 150px}
+  .ticket .main{padding:34px}
+  .ticket .stub{border-left:2px dashed #b7ada2;padding:34px 18px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;background:#efe9e1}
+  .ticket .stub b{font-family:var(--serif);font-weight:normal;font-size:46px;line-height:1;color:var(--orange)}
+  .ticket .stub small{font:700 10px/1.5 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:#7a7168}
+  .ticket h3{font-size:30px;margin:10px 0 20px}
+  .ticket dl{display:grid;grid-template-columns:110px 1fr;gap:10px 14px;font-size:15px}
+  .ticket dt{font:700 11px/1.9 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:#7a7168}
+  .ticket dd{font-family:var(--serif);font-size:18px}
+  .ticket .links{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+  .ticket .links a{font:700 12px/1 var(--sans);letter-spacing:.1em;text-transform:uppercase;text-decoration:none;padding:12px 14px;border:1.5px solid var(--ink);color:var(--ink)}
+  .ticket .links a:hover{background:var(--ink);color:var(--cream)}
+  .countdown{background:var(--ink2);border:1px solid var(--line);padding:34px;display:flex;flex-direction:column;justify-content:center}
+  .countdown .cd{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:22px 0 18px}
+  .countdown .cd div{text-align:center;background:var(--ink);border:1px solid var(--line);padding:18px 4px}
+  .countdown .cd b{display:block;font-family:var(--serif);font-weight:normal;font-size:clamp(34px,4.5vw,48px);line-height:1;color:var(--cream)}
+  .countdown .cd span{font:700 10px/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--dim)}
+  .countdown .status{font-family:var(--serif);font-size:19px}
+  .countdown .note{font-size:14px;color:var(--muted);margin-top:8px}
+
+  /* ---------- RSVP ---------- */
+  .rsvp{background:radial-gradient(ellipse at 50% 0%,rgba(232,89,12,.18),transparent 60%),var(--ink);border-top:4px solid var(--orange)}
+  .rsvp .head{margin:0 auto 40px;text-align:center}
+  form{max-width:680px;margin:0 auto;background:var(--ink2);border:1px solid var(--line);padding:36px}
+  .f2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  label.l{display:block;font:700 11px/1 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin:0 0 9px}
+  .field{margin-bottom:22px}
+  input[type=text],input[type=email]{width:100%;background:var(--ink);border:1px solid #3a3632;color:var(--cream);font:16px var(--sans);padding:14px 14px;border-radius:0;outline:none;transition:border-color .2s}
+  input:focus{border-color:var(--orange)}
+  .days{display:grid;grid-template-columns:repeat(9,1fr);gap:6px}
+  .days button,.pills button{background:var(--ink);border:1px solid #3a3632;color:var(--cream);cursor:pointer;font-family:var(--sans);transition:all .2s}
+  .days button{padding:10px 0 9px;text-align:center}
+  .days button small{display:block;font:700 9px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--dim);margin-bottom:5px}
+  .days button b{font-family:var(--serif);font-weight:normal;font-size:20px;line-height:1}
+  .days button.on,.pills button.on{background:var(--orange);border-color:var(--orange);color:#fff}
+  .days button.on small{color:#fff}
+  .days button:disabled{opacity:.3;cursor:not-allowed}
+  .pills{display:flex;flex-wrap:wrap;gap:8px}
+  .pills button{padding:10px 14px;font-size:14px;border-radius:40px}
+  form .btn{width:100%;justify-content:center;margin-top:6px}
+  .fine{font-size:12px;color:var(--dim);margin-top:14px;text-align:center}
+  .err{color:#ff9a6b;font-size:14px;margin-top:10px;text-align:center;min-height:1.2em}
+  .thanks{display:none;max-width:680px;margin:0 auto;text-align:center;background:var(--cream);color:var(--ink);padding:46px 36px}
+  .thanks h3{font-size:36px;margin:10px 0 12px}
+  .thanks p{font-family:var(--serif);font-size:18px;color:#3c3732}
+  .thanks .links{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin-top:24px}
+  .thanks .links a{font:700 12px/1 var(--sans);letter-spacing:.1em;text-transform:uppercase;text-decoration:none;padding:13px 16px;border:1.5px solid var(--ink);color:var(--ink)}
+  .thanks .links a.solid{background:var(--orange);border-color:var(--orange);color:#fff}
+
+  /* ---------- Footer ---------- */
+  footer{padding:60px 0 40px;border-top:1px solid var(--line);text-align:center}
+  footer .logo{display:inline-block;margin-bottom:18px}
+  footer .logo img{height:40px}
+  footer .soc{display:flex;justify-content:center;gap:22px;margin-bottom:18px;font-size:14px}
+  footer .soc a{text-decoration:none;color:var(--cream)}
+  footer .soc a:hover{color:var(--orange)}
+  footer p{font-size:12px;color:var(--dim)}
+  footer .by{margin-top:22px;font-size:11px;letter-spacing:.14em;text-transform:uppercase}
+
+  /* ---------- Photos, socials (from royalbikers.com) ---------- */
+  .ico{width:18px;height:18px;fill:currentColor;flex:0 0 auto}
+  .permit .rb-logo{height:34px;display:block;margin-bottom:6px}
+  .top-right{display:flex;align-items:center;gap:22px}
+  .soc-top{display:flex;gap:8px}
+  .soc-top a,.soc-big a{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border:1px solid rgba(245,241,236,.35);border-radius:50%;color:var(--cream);text-decoration:none;background:rgba(10,10,10,.45);transition:all .2s}
+  .soc-top a:hover,.soc-big a:hover{background:var(--orange);border-color:var(--orange);color:#fff;transform:translateY(-2px)}
+  .hero{background:#0A0A0A}
+  .hero-bg{position:absolute;inset:0;background:url("img/DSC07382-Recovered.jpg") 62% center/cover no-repeat;transform:scale(1.04);animation:kb 22s ease-in-out infinite alternate}
+  @keyframes kb{to{transform:scale(1.12) translateX(-1.5%)}}
+  .hero-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,10,10,.94) 0%,rgba(10,10,10,.78) 42%,rgba(10,10,10,.25) 80%),linear-gradient(0deg,#0A0A0A 0%,rgba(10,10,10,0) 30%)}
+  .hero .road-svg{position:absolute;left:0;right:0;bottom:0;width:100%;height:140px;z-index:1}
+  .letter .photo{margin-top:34px;position:relative}
+  .letter .photo img{width:100%;display:block;aspect-ratio:4/3;object-fit:cover;box-shadow:12px 12px 0 var(--orange)}
+  .letter .photo small{display:block;font:700 10px/1.5 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:#7a7168;margin-top:22px}
+  .tours{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;counter-reset:r}
+  .tour{position:relative;display:block;aspect-ratio:4/5;overflow:hidden;text-decoration:none;background:#000;border:1px solid var(--line)}
+  .tour img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s ease,opacity .4s}
+  .tour:hover img{transform:scale(1.07)}
+  .tour:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(10,10,10,.92) 0%,rgba(10,10,10,.15) 55%,rgba(10,10,10,0))}
+  .tour .cap{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:22px}
+  .tour .cap:before{counter-increment:r;content:counter(r,decimal-leading-zero);display:block;font:700 12px/1 var(--sans);color:var(--orange);letter-spacing:.1em;margin-bottom:8px}
+  .tour b{display:block;font-family:var(--serif);font-weight:normal;font-size:24px;line-height:1.15}
+  .tour span{font-size:13px;color:#cfc7bd;letter-spacing:.04em}
+  .tour .go{position:absolute;top:16px;right:16px;z-index:2;font:700 10px/1 var(--sans);letter-spacing:.18em;text-transform:uppercase;background:var(--orange);color:#fff;padding:8px 10px;opacity:0;transform:translateY(-6px);transition:all .3s}
+  .tour:hover .go{opacity:1;transform:none}
+  .gallery{padding:0;display:grid;grid-template-columns:1.4fr 1fr;grid-template-rows:auto;gap:4px;background:var(--ink)}
+  .gallery figure{position:relative;margin:0;overflow:hidden;min-height:340px}
+  .gallery img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s}
+  .gallery figure:hover img{transform:scale(1.04)}
+  .gallery figcaption{position:absolute;left:18px;bottom:16px;font:700 11px/1.4 var(--sans);letter-spacing:.18em;text-transform:uppercase;background:rgba(10,10,10,.7);padding:8px 12px}
+  .gallery .quote{grid-column:1/-1;display:flex;align-items:center;justify-content:center;text-align:center;padding:60px 24px;background:var(--orange);color:#fff;min-height:0}
+  .gallery .quote p{font-family:var(--serif);font-size:clamp(24px,3.4vw,38px);line-height:1.25;max-width:820px}
+  .gallery .quote small{display:block;font:700 11px/1.4 var(--sans);letter-spacing:.24em;text-transform:uppercase;margin-top:16px;opacity:.85}
+  .give{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;margin-top:60px;padding-top:50px;border-top:1px solid var(--line)}
+  .give .pics{display:grid;grid-template-columns:1.2fr 1fr;gap:10px}
+  .give .pics img{width:100%;height:240px;object-fit:cover;display:block}
+  .give h3{font-size:30px;margin:12px 0 14px}
+  .give p{color:var(--muted);font-size:16px;margin-bottom:12px}
+  .give p b{color:var(--cream);font-weight:normal}
+  .follow{text-align:center;padding:80px 0;background:var(--ink2);border-top:1px solid var(--line)}
+  .follow h2{font-size:clamp(30px,4.4vw,44px);margin:14px 0 12px}
+  .follow p{color:var(--muted);margin-bottom:28px}
+  .soc-big{display:flex;justify-content:center;flex-wrap:wrap;gap:12px}
+  .soc-big a{width:auto;height:auto;border-radius:40px;padding:12px 20px;gap:10px;font:700 12px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase}
+  .contact{display:flex;justify-content:center;flex-wrap:wrap;gap:10px 26px;margin:6px 0 20px;font-size:14px}
+  .contact a{color:var(--muted);text-decoration:none;display:inline-flex;align-items:center;gap:8px}
+  .contact a:hover{color:var(--orange)}
+  .wa-float{position:fixed;right:18px;bottom:18px;z-index:40;width:56px;height:56px;border-radius:50%;background:#25D366;color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(0,0,0,.45);transition:transform .2s}
+  .wa-float:hover{transform:scale(1.08)}
+  .wa-float .ico{width:30px;height:30px}
+  .thanks .follow-line{margin-top:22px;font:700 11px/1.5 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:#7a7168}
+  .thanks .follow-line a{color:var(--orange)}
+
+  @media (max-width:900px){
+    .tours{grid-template-columns:1fr 1fr}
+    .give{grid-template-columns:1fr}
+    .soc-top{display:none}
+    .cards{grid-template-columns:1fr 1fr}
+    .letter .wrap,.where .grid{grid-template-columns:1fr;gap:36px}
+    .includes{grid-template-columns:1fr 1fr}
+    .days{grid-template-columns:repeat(5,1fr)}
+  }
+  @media (max-width:600px){
+    section{padding:80px 0}
+    .stats .wrap{grid-template-columns:1fr 1fr}
+    .stats div:nth-child(2){border-right:0}
+    .stats div:nth-child(-n+2){border-bottom:1px solid rgba(255,255,255,.28)}
+    .cards,.includes,.f2{grid-template-columns:1fr}
+    .partner{display:none}
+    .chip{flex-wrap:wrap}
+    .chip div{flex:1 1 auto}
+    .ticket{grid-template-columns:1fr}
+    .ticket .stub{border-left:0;border-top:2px dashed #b7ada2;flex-direction:row;gap:14px}
+    .ticket dl{grid-template-columns:90px 1fr}
+    form{padding:24px}
+    .tours{grid-template-columns:1fr}
+    .tour{aspect-ratio:16/11}
+    .gallery{grid-template-columns:1fr}
+    .gallery figure{min-height:240px}
+    .give .pics img{height:170px}
+    .hero-bg{background-position:70% center}
+    .hero-shade{background:linear-gradient(0deg,rgba(10,10,10,.96) 0%,rgba(10,10,10,.7) 55%,rgba(10,10,10,.45) 100%)}
+  }
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<!-- Social icon sprite -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-fb" viewBox="0 0 24 24"><path d="M14 8h3V4h-3c-2.8 0-4 1.7-4 4.3V10H7v4h3v8h4v-8h3l1-4h-4V8.6c0-.4.3-.6.6-.6z"/></symbol>
+  <symbol id="i-ig" viewBox="0 0 24 24"><path d="M12 7.3a4.7 4.7 0 1 0 0 9.4 4.7 4.7 0 0 0 0-9.4zm0 7.7a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm6-7.9a1.1 1.1 0 1 1-2.2 0 1.1 1.1 0 0 1 2.2 0zM12 3.6c2.7 0 3 0 4.1.1 1 0 1.5.2 1.9.3.5.2.8.4 1.1.7.4.4.6.7.7 1.1.2.4.3.9.4 1.9v8.2c-.1 1-.2 1.5-.4 1.9-.1.5-.3.8-.7 1.1-.3.4-.6.6-1.1.7-.4.2-.9.3-1.9.4H7.9c-1-.1-1.5-.2-1.9-.4-.5-.1-.8-.3-1.1-.7-.4-.3-.6-.6-.7-1.1-.2-.4-.3-.9-.4-1.9V7.9c.1-1 .2-1.5.4-1.9.1-.4.3-.7.7-1.1.3-.3.6-.5 1.1-.7.4-.1.9-.3 1.9-.3H12M12 2C9.3 2 8.9 2 7.9 2.1c-1.1 0-1.8.2-2.4.4-.7.3-1.2.6-1.8 1.2-.6.6-.9 1.1-1.2 1.8-.2.6-.4 1.3-.4 2.4C2 8.9 2 9.3 2 12s0 3.1.1 4.1c0 1.1.2 1.8.4 2.4.3.7.6 1.2 1.2 1.8.6.6 1.1.9 1.8 1.2.6.2 1.3.4 2.4.4h8.2c1.1 0 1.8-.2 2.4-.4.7-.3 1.2-.6 1.8-1.2.6-.6.9-1.1 1.2-1.8.2-.6.4-1.3.4-2.4.1-1 .1-1.4.1-4.1s0-3.1-.1-4.1c0-1.1-.2-1.8-.4-2.4-.3-.7-.6-1.2-1.2-1.8-.6-.6-1.1-.9-1.8-1.2-.6-.2-1.3-.4-2.4-.4C15.1 2 14.7 2 12 2z"/></symbol>
+  <symbol id="i-yt" viewBox="0 0 24 24"><path d="M22 8.2a3 3 0 0 0-2.1-2.1C18 5.6 12 5.6 12 5.6s-6 0-7.9.5A3 3 0 0 0 2 8.2 31 31 0 0 0 1.6 12a31 31 0 0 0 .4 3.8 3 3 0 0 0 2.1 2.1c1.9.5 7.9.5 7.9.5s6 0 7.9-.5a3 3 0 0 0 2.1-2.1c.3-1.2.4-2.5.4-3.8s-.1-2.6-.4-3.8zM10 15V9l5.2 3z"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-3.6 19.3c-.1-.8-.2-2 0-2.9l1.2-5s-.3-.6-.3-1.5c0-1.4.8-2.5 1.8-2.5.9 0 1.3.7 1.3 1.5 0 .9-.6 2.2-.9 3.4-.2 1 .5 1.9 1.6 1.9 1.9 0 3.3-2 3.3-4.9 0-2.6-1.8-4.4-4.5-4.4-3 0-4.8 2.3-4.8 4.6 0 .9.4 1.9.8 2.4l.1.4-.3 1.2c0 .2-.2.3-.4.2-1.4-.6-2.2-2.6-2.2-4.2 0-3.4 2.5-6.6 7.2-6.6 3.8 0 6.7 2.7 6.7 6.3 0 3.8-2.4 6.8-5.7 6.8-1.1 0-2.2-.6-2.5-1.3l-.7 2.6c-.2 1-.9 2.2-1.4 2.9A10 10 0 1 0 12 2z"/></symbol>
+  <symbol id="i-wa" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 2s.9 2.3 1 2.5c.1.2 1.7 2.6 4.2 3.7 1.6.7 2.2.7 3 .6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.5-.2z"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm1 2.4V17h16V7.4l-8 5.3zM5.6 7l6.4 4.3L18.4 7z"/></symbol>
+  <symbol id="i-tel" viewBox="0 0 24 24"><path d="M6.6 10.8a15.2 15.2 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></symbol>
+</svg>
+
+<!-- ================= GATE ================= -->
+<div id="gate" role="dialog" aria-label="Open your invitation">
+  <div class="permit" id="permit">
+    <div class="row">
+      <div class="tiny"><img class="rb-logo" src="img/logo2.png" alt="Royal Bikers">Ride Permit</div>
+      <div class="no">Nº MCL26&middot;3B20</div>
+    </div>
+    <h2>Permit to enter Hall 3</h2>
+    <p class="to" id="permitTo">Issued to every rider on our list</p>
+    <dl>
+      <div><dt>Route</dt><dd>Your door to the NEC</dd></div>
+      <div><dt>Valid</dt><dd>21–29 Nov 2026</dd></div>
+      <div><dt>Checkpoint</dt><dd>Royal Enfield stand</dd></div>
+      <div><dt>Stand</dt><dd>Hall 3 &middot; 3B20</dd></div>
+    </dl>
+    <button class="stamp-btn" id="stampBtn" aria-label="Stamp the permit to open the invitation">
+      <span class="stamp"><strong>12</strong>years</span>
+      <span class="hint">Tap the seal to stamp your permit<small>Your invitation opens once it's approved</small></span>
+    </button>
+    <div class="inked" aria-hidden="true">Approved<strong>Hall 3</strong>Royal Bikers</div>
+  </div>
+</div>
+
+<!-- ================= HERO ================= -->
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="https://royalbikers.com/" target="_blank" rel="noopener">
+      <img src="img/logo2.png" alt="Royal Bikers" onerror="this.parentNode.classList.add('fallback')">
+      <span class="wordmark">Royal <b>Bikers</b></span>
+    </a>
+    <div class="top-right">
+      <div class="partner">Official touring partners of<br><span>Royal Enfield</span></div>
+      <nav class="soc-top" aria-label="Royal Bikers social links">
+        <a href="https://www.instagram.com/royal.bikers/" target="_blank" rel="noopener" aria-label="Instagram"><svg class="ico"><use href="#i-ig"/></svg></a>
+        <a href="https://www.facebook.com/groups/royalbikers/" target="_blank" rel="noopener" aria-label="Facebook"><svg class="ico"><use href="#i-fb"/></svg></a>
+        <a href="https://www.youtube.com/channel/UC5SE1x1Qt9nRf1E7ehDNzCg" target="_blank" rel="noopener" aria-label="YouTube"><svg class="ico"><use href="#i-yt"/></svg></a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="hero-bg" role="img" aria-label="Royal Bikers riders on a Ladakh mountain road"></div>
+  <div class="hero-shade"></div>
+  <svg class="road-svg" viewBox="0 0 1440 140" preserveAspectRatio="none" aria-hidden="true">
+    <path id="road" d="M-20 140 C 300 130, 420 70, 640 80 S 1000 110, 1180 50 S 1380 10, 1460 0" stroke="#E8590C" stroke-width="3" fill="none" stroke-dasharray="14 12" opacity=".9"/>
+    <circle r="7" fill="#ff7a33">
+      <animateMotion dur="9s" repeatCount="indefinite" rotate="auto"><mpath href="#road"/></animateMotion>
+    </circle>
+  </svg>
+
+  <div class="wrap">
+    <div class="hero-inner">
+      <p class="eyebrow">Motorcycle Live 2026 &middot; NEC Birmingham</p>
+      <p class="greet" id="greet"></p>
+      <h1>You're invited to <em>Hall&nbsp;3</em></h1>
+      <p class="lede">Twelve years of riding India, Nepal and Bhutan on Royal Enfields. This November we bring the Himalaya to Birmingham, and we'd like you on the stand with us.</p>
+      <div class="chip">
+        <div><small>Find us on the</small><b>Royal Enfield stand</b></div>
+        <div><small>Hall</small><b>3</b></div>
+        <div><small>Stand</small><b>3B20</b></div>
+      </div>
+      <div class="ctas">
+        <a href="#rsvp" class="btn btn-solid">Count me in</a>
+        <a href="#where" class="btn btn-ghost">Event details</a>
+      </div>
+      <p class="when">21–29 November 2026 &nbsp;&middot;&nbsp; Doors 10am to 5pm daily</p>
+    </div>
+  </div>
+  <a href="#letter" class="scroll-cue">Scroll</a>
+</section>
+
+<div class="stats">
+  <div class="wrap">
+    <div><b>12</b><span>Years on the road</span></div>
+    <div><b>9</b><span>Guided routes</span></div>
+    <div><b>3</b><span>Countries</span></div>
+    <div><b>9</b><span>Days at the NEC</span></div>
+  </div>
+</div>
+
+<!-- ================= LETTER ================= -->
+<section class="letter" id="letter">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="big12">12<small>Years of Royal Bikers</small></div>
+      <div class="photo">
+        <img src="img/about-main-1.jpg" alt="A Royal Bikers group of riders from the UK and India" loading="lazy">
+        <small>Riders from the UK and India, one Royal Bikers group</small>
+      </div>
+    </div>
+    <div class="reveal">
+      <p class="eyebrow">A note from our founders</p>
+      <h2>Come and say hello in Hall&nbsp;3</h2>
+      <p>For twelve years we have led riders from the UK and around the world over the passes of Ladakh and Spiti, through the deserts of Rajasthan, down the backroads of Kerala and on into Nepal and Bhutan.</p>
+      <p>This year we mark that milestone at Motorcycle Live, as official touring partners of Royal Enfield, on their stand for all nine days of the show. Pull up a seat, tell us where you've always wanted to ride, and we'll show you how we'd get you there.</p>
+      <p>We'd love to see you.</p>
+      <div class="sig">
+        <div><span class="names">Raj &amp; Manish</span><small>Co-founders, Royal Bikers</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ON THE STAND ================= -->
+<section id="stand">
+  <div class="wrap">
+    <div class="head reveal">
+      <p class="eyebrow">On the stand</p>
+      <h2>What's waiting at 3B20</h2>
+      <p>One stop on the Royal Enfield stand covers the bikes, the routes and the people who ride them with you.</p>
+    </div>
+    <div class="cards">
+      <div class="card reveal">
+        <svg viewBox="0 0 48 48"><circle cx="17" cy="16" r="6"/><circle cx="33" cy="16" r="6"/><path d="M5 40c1-7 6-11 12-11s11 4 12 11M23 40c1-6 5-10 10-10s9 4 10 10"/></svg>
+        <h3>Meet the team</h3>
+        <p>Talk to the people who plan and lead every Royal Bikers ride, and ask them anything about the road.</p>
+      </div>
+      <div class="card reveal">
+        <svg viewBox="0 0 48 48"><path d="M4 40 L16 18 L24 30 L32 14 L44 40Z"/><path d="M28 22 L32 14 L36 22"/><circle cx="38" cy="9" r="3"/></svg>
+        <h3>Plan your 2027 ride</h3>
+        <p>Go through routes, dates and riding levels for all nine tours, from Kerala to the high Himalaya.</p>
+      </div>
+      <div class="card reveal">
+        <svg viewBox="0 0 48 48"><circle cx="11" cy="33" r="7"/><circle cx="37" cy="33" r="7"/><path d="M11 33 L19 21 H29 L37 33 M19 21 L16 15 H11 M29 21 L32 13 H37 M24 21 L26 33 H11"/></svg>
+        <h3>The bikes, up close</h3>
+        <p>See the Royal Enfields we tour on, right where they live: on the Royal Enfield stand.</p>
+      </div>
+      <div class="card gold reveal">
+        <svg viewBox="0 0 48 48"><path d="M24 5 L29 17 L42 18 L32 27 L35 40 L24 33 L13 40 L16 27 L6 18 L19 17Z"/></svg>
+        <h3>Twelve years, celebrated</h3>
+        <p>We're marking the milestone on the stand, with something special for riders who come and find us. Watch this space.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ROUTES ================= -->
+<section class="routes" id="routes">
+  <div class="wrap">
+    <div class="head reveal">
+      <p class="eyebrow">The routes</p>
+      <h2>Nine roads we'll talk you through</h2>
+    </div>
+    <div class="tours">
+      <a class="tour reveal" href="https://royalbikers.com/upcoming-tours/kerala/" target="_blank" rel="noopener"><img src="img/Kerala-1.jpg" alt="Kerala tour" loading="lazy"><span class="go">View tour</span><div class="cap"><b>Kerala</b><span>South India</span></div></a>
+      <a class="tour reveal" href="https://royalbikers.com/upcoming-tours/rajasthan/" target="_blank" rel="noopener"><img src="img/Upcoming-tour-image.jpg" alt="Rajasthan tour" loading="lazy"><span class="go">View tour</span><div class="cap"><b>Rajasthan</b><span>Desert and royal heritage</span></div></a>
+      <a class="tour reveal" href="https://royalbikers.com/upcoming-tours/northeast/" target="_blank" rel="noopener"><img src="img/NE-India.jpg" alt="North-East India tour" loading="lazy"><span class="go">View tour</span><div class="cap"><b>North-East India</b><span>The rarely ridden frontier</span></div></a>
+      <a class="tour reveal" href="https://royalbikers.com/category-featured-tours/ladakh/" target="_blank" rel="noopener"><img src="img/Ladakh.jpg" alt="Ladakh tour" loading="lazy"><span class="go">View tour</span><div class="cap"><b>Ladakh</b><span>The high passes</span></div></a>
+      <a class="tour reveal" href="https://royalbikers.com/" target="_blank" rel="noopener"><img src="img/Leh.jpg" alt="Ultimate Himalayan Adventure" loading="lazy"><span class="go">View tour</span><div class="cap"><b>Ultimate Himalayan Adventure</b><span>Himalaya</span></div></a>
+      <a class="tour reveal" href="https://royalbikers.com/category-featured-tours/ladakh/" target="_blank" rel="noopener"><img src="img/Ladakh-Zanskar.jpg" alt="Epic Ladakh Adventure, Zanskar" loading="lazy"><span class="go">View tour</span><div class="cap"><b>Epic Ladakh Adventure–Zanskar</b><span>Ladakh and Zanskar</span></div></a>
+      <a class="tour reveal" href="https://royalbikers.com/upcoming-tours/spellbound-spiti/" target="_blank" rel="noopener"><img src="img/Spiti-1.jpg" alt="Spellbound Spiti tour" loading="lazy"><span class="go">View tour</span><div class="cap"><b>Spellbound Spiti</b><span>Himachal Pradesh</span></div></a>
+      <a class="tour reveal" href="https://royalbikers.com/" target="_blank" rel="noopener"><img src="img/Nepal.jpg" alt="Nepal tour" loading="lazy"><span class="go">View tour</span><div class="cap"><b>Nepal</b><span>Across the border</span></div></a>
+      <a class="tour reveal" href="https://royalbikers.com/upcoming-tours/bhutan/" target="_blank" rel="noopener"><img src="img/Bhutan.jpg" alt="Bhutan tour" loading="lazy"><span class="go">View tour</span><div class="cap"><b>Bhutan</b><span>The kingdom in the clouds</span></div></a>
+    </div>
+    <div class="includes reveal">
+      <p>A well-maintained Royal Enfield, fuel included</p>
+      <p>Ride captain and trained mechanic on every ride</p>
+      <p>Back-up van carrying luggage, spares and fuel</p>
+      <p>Inner-line permits and monument entry</p>
+      <p>Twin-share stays with breakfast and dinner</p>
+      <p>Airport pickup when you land in India</p>
+    </div>
+    <div class="give reveal">
+      <div class="pics">
+        <img src="img/img4.jpg" alt="Headlight Foundation handing out water bottles at a Ladakh school" loading="lazy">
+        <img src="img/DSC00283.jpg" alt="Royal Bikers team with young monks at a Himalayan school" loading="lazy">
+      </div>
+      <div>
+        <p class="eyebrow">Riding that gives back</p>
+        <h3>The Headlight Foundation</h3>
+        <p>Every rider who travels with us funds a <b>$50 contribution to the Headlight Foundation</b>, supporting schools and children in the mountain villages our routes pass through.</p>
+        <p>Ask us about it on the stand.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= GALLERY ================= -->
+<section class="gallery" aria-label="Photos from Royal Bikers tours">
+  <figure class="reveal"><img src="img/Banner7.jpg" alt="Royal Enfield Himalayans parked by a turquoise high-altitude lake" loading="lazy"><figcaption>Lakeside, Ladakh</figcaption></figure>
+  <figure class="reveal"><img src="img/Banner6.jpg" alt="A rider splashing through a river crossing" loading="lazy"><figcaption>River crossing, Himalaya</figcaption></figure>
+  <div class="quote"><div><p>The bikes, the passes and the people. Come and hear the stories in Hall&nbsp;3.</p><small>Royal Bikers &middot; Stand 3B20</small></div></div>
+</section>
+
+<!-- ================= WHERE & WHEN ================= -->
+<section class="where" id="where">
+  <div class="wrap">
+    <div class="head reveal">
+      <p class="eyebrow">When &amp; where</p>
+      <h2>Nine days. One stand.</h2>
+    </div>
+    <div class="grid">
+      <div class="ticket reveal">
+        <div class="main">
+          <p class="eyebrow">Motorcycle Live 2026</p>
+          <h3>Royal Enfield stand</h3>
+          <dl>
+            <dt>Dates</dt><dd>Sat 21 – Sun 29 November 2026</dd>
+            <dt>Hours</dt><dd>10am to 5pm daily</dd>
+            <dt>Venue</dt><dd>NEC Birmingham, B40 1NT</dd>
+            <dt>Find us</dt><dd>Hall 3, Stand 3B20</dd>
+          </dl>
+          <div class="links">
+            <a href="https://www.google.com/maps/search/?api=1&query=NEC+Birmingham+Hall+3" target="_blank" rel="noopener">Get directions</a>
+            <a href="https://www.motorcyclelive.co.uk/" target="_blank" rel="noopener">Show tickets</a>
+            <a id="gcal" href="#" target="_blank" rel="noopener">Add to calendar</a>
+          </div>
+        </div>
+        <div class="stub">
+          <small>Hall</small><b>3</b><small>Stand</small><b>3B20</b>
+        </div>
+      </div>
+      <div class="countdown reveal">
+        <p class="eyebrow" id="cdLabel">Doors open in</p>
+        <div class="cd" id="cd">
+          <div><b id="cdD">00</b><span>Days</span></div>
+          <div><b id="cdH">00</b><span>Hours</span></div>
+          <div><b id="cdM">00</b><span>Mins</span></div>
+          <div><b id="cdS">00</b><span>Secs</span></div>
+        </div>
+        <p class="status" id="cdStatus">Opening day: Saturday 21 November, 10am.</p>
+        <p class="note">Entry to the show needs a Motorcycle Live ticket. Once inside, head for Hall 3 and look for the Royal Enfield stand.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= RSVP ================= -->
+<section class="rsvp" id="rsvp">
+  <div class="wrap">
+    <div class="head reveal">
+      <p class="eyebrow">RSVP</p>
+      <h2>Tell us when you're coming</h2>
+      <p>Pick your day and we'll make sure someone from the team is ready for you at 3B20.</p>
+    </div>
+    <form id="rsvpForm" novalidate>
+      <div class="f2">
+        <div class="field"><label class="l" for="fName">Your name</label><input type="text" id="fName" autocomplete="name" required></div>
+        <div class="field"><label class="l" for="fEmail">Email</label><input type="email" id="fEmail" autocomplete="email" required></div>
+      </div>
+      <div class="field">
+        <label class="l">Which day?</label>
+        <div class="days" id="days"></div>
+      </div>
+      <div class="field">
+        <label class="l">I'd like to talk about</label>
+        <div class="pills" id="pills"></div>
+      </div>
+      <button type="submit" class="btn btn-solid">Send my RSVP</button>
+      <p class="err" id="err" role="alert"></p>
+      <p class="fine">We'll only use your details to plan your visit and send you Royal Bikers news.</p>
+    </form>
+    <div class="thanks" id="thanks">
+      <p class="eyebrow">Permit approved</p>
+      <h3 id="thxTitle">See you in Hall 3</h3>
+      <p id="thxBody">We've got you down. Look for the Royal Enfield stand, Stand 3B20.</p>
+      <div class="links">
+        <a id="thxCal" class="solid" href="#" target="_blank" rel="noopener">Add my day to calendar</a>
+        <a href="https://www.google.com/maps/search/?api=1&query=NEC+Birmingham+Hall+3" target="_blank" rel="noopener">Directions</a>
+        <a href="https://royalbikers.com/" target="_blank" rel="noopener">Browse the tours</a>
+      </div>
+      <p class="follow-line">Follow the build-up on <a href="https://www.instagram.com/royal.bikers/" target="_blank" rel="noopener">Instagram @royal.bikers</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOLLOW ================= -->
+<section class="follow" id="follow">
+  <div class="wrap">
+    <p class="eyebrow">Ride along before the show</p>
+    <h2>Follow Royal Bikers</h2>
+    <p>Tour films, rider stories and stand updates in the run-up to Motorcycle Live.</p>
+    <div class="soc-big">
+      <a href="https://www.instagram.com/royal.bikers/" target="_blank" rel="noopener"><svg class="ico"><use href="#i-ig"/></svg>Instagram</a>
+      <a href="https://www.facebook.com/groups/royalbikers/" target="_blank" rel="noopener"><svg class="ico"><use href="#i-fb"/></svg>Facebook</a>
+      <a href="https://www.youtube.com/channel/UC5SE1x1Qt9nRf1E7ehDNzCg" target="_blank" rel="noopener"><svg class="ico"><use href="#i-yt"/></svg>YouTube</a>
+      <a href="https://in.pinterest.com/RoyalBikersclub/" target="_blank" rel="noopener"><svg class="ico"><use href="#i-pin"/></svg>Pinterest</a>
+      <a href="https://api.whatsapp.com/send?phone=919891599599" target="_blank" rel="noopener"><svg class="ico"><use href="#i-wa"/></svg>WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap">
+    <a class="logo" href="https://royalbikers.com/" target="_blank" rel="noopener">
+      <img src="img/logo2.png" alt="Royal Bikers" onerror="this.parentNode.classList.add('fallback')">
+      <span class="wordmark">Royal <b>Bikers</b></span>
+    </a>
+    <div class="soc">
+      <a href="https://www.instagram.com/royal.bikers/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.facebook.com/groups/royalbikers/" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://www.youtube.com/channel/UC5SE1x1Qt9nRf1E7ehDNzCg" target="_blank" rel="noopener">YouTube</a>
+      <a href="https://in.pinterest.com/RoyalBikersclub/" target="_blank" rel="noopener">Pinterest</a>
+      <a href="https://royalbikers.com/" target="_blank" rel="noopener">royalbikers.com</a>
+    </div>
+    <div class="contact">
+      <a href="mailto:info@royalbikers.com"><svg class="ico"><use href="#i-mail"/></svg>info@royalbikers.com</a>
+      <a href="tel:+447436828877"><svg class="ico"><use href="#i-tel"/></svg>UK +44 7436 828877</a>
+      <a href="tel:+919891599599"><svg class="ico"><use href="#i-tel"/></svg>India +91 98915 99599</a>
+    </div>
+    <p>Official touring partners of Royal Enfield. Guided motorcycle tours across India, Nepal and Bhutan.</p>
+    <p class="by">Powered by Biz Box Story</p>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://api.whatsapp.com/send?phone=919891599599&text=Hi%20Royal%20Bikers%2C%20I%27ll%20see%20you%20at%20Motorcycle%20Live%2C%20Stand%203B20" target="_blank" rel="noopener" aria-label="Chat with Royal Bikers on WhatsApp"><svg class="ico"><use href="#i-wa"/></svg></a>
+
+<script>
+/* ===== CONFIG ===== */
+// Paste a form endpoint here (Brevo form, Formspree, Google Apps Script web app, etc.).
+// It receives a JSON POST: {name,email,day,interests,source}. Leave empty to show the thank-you screen only.
+var RSVP_ENDPOINT = "";
+var SHOW_START = new Date("2026-11-21T10:00:00Z");
+var SHOW_END   = new Date("2026-11-29T17:00:00Z");
+var DAYS = [["Sat",21],["Sun",22],["Mon",23],["Tue",24],["Wed",25],["Thu",26],["Fri",27],["Sat",28],["Sun",29]];
+var TOPICS = ["Ladakh","Spiti","Rajasthan","Kerala","North-East India","Nepal","Bhutan","Not sure yet"];
+
+/* ===== Personalisation: ?name=Sarah or #Sarah ===== */
+function getName(){
+  var n = "";
+  try{ n = new URLSearchParams(location.search).get("name") || ""; }catch(e){}
+  if(!n && location.hash && !/^#(rsvp|where|letter|stand|routes|top)$/.test(location.hash)) n = decodeURIComponent(location.hash.slice(1));
+  n = n.replace(/[^\p{L}\p{M}' -]/gu,"").trim().slice(0,30);
+  if(/^\{\{|contact\./i.test(n)) n = "";
+  return n;
+}
+var NAME = getName();
+if(NAME){
+  document.getElementById("permitTo").textContent = "Issued to " + NAME;
+  document.getElementById("greet").textContent = "Dear " + NAME + ",";
+  document.getElementById("fName").value = NAME;
+}
+
+/* ===== Gate ===== */
+var gate = document.getElementById("gate"), permit = document.getElementById("permit");
+function openGate(){
+  if(permit.classList.contains("stamped")) return;
+  permit.classList.add("stamped");
+  setTimeout(function(){ permit.classList.add("fly"); }, 750);
+  setTimeout(function(){ gate.classList.add("gone"); document.body.style.overflow=""; }, 1250);
+}
+document.body.style.overflow = "hidden";
+document.getElementById("stampBtn").addEventListener("click", openGate);
+gate.addEventListener("keydown", function(e){ if(e.key==="Enter"||e.key===" ") openGate(); });
+
+/* ===== Reveal on scroll ===== */
+var io = "IntersectionObserver" in window ? new IntersectionObserver(function(es){
+  es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target);} });
+},{threshold:.15}) : null;
+document.querySelectorAll(".reveal").forEach(function(el){ io ? io.observe(el) : el.classList.add("in"); });
+
+/* ===== Countdown ===== */
+function pad(n){ return (n<10?"0":"")+n; }
+function tick(){
+  var now = new Date(), cd = document.getElementById("cd");
+  if(now < SHOW_START){
+    var s = Math.floor((SHOW_START-now)/1000);
+    document.getElementById("cdD").textContent = pad(Math.floor(s/86400));
+    document.getElementById("cdH").textContent = pad(Math.floor(s%86400/3600));
+    document.getElementById("cdM").textContent = pad(Math.floor(s%3600/60));
+    document.getElementById("cdS").textContent = pad(s%60);
+  } else if(now < SHOW_END){
+    cd.style.display = "none";
+    document.getElementById("cdLabel").textContent = "Live now";
+    document.getElementById("cdStatus").textContent = "The show is on. We're in Hall 3, Stand 3B20, until 5pm today.";
+  } else {
+    cd.style.display = "none";
+    document.getElementById("cdLabel").textContent = "That's a wrap";
+    document.getElementById("cdStatus").textContent = "Thank you to everyone who visited. Missed us? Get in touch at royalbikers.com.";
+  }
+}
+tick(); setInterval(tick, 1000);
+
+/* ===== Calendar links ===== */
+function gcal(day){
+  var d = day || 21, dd = pad(d);
+  var url = "https://calendar.google.com/calendar/render?action=TEMPLATE"
+    + "&text=" + encodeURIComponent("Royal Bikers at Motorcycle Live · Hall 3, Stand 3B20")
+    + "&dates=202611" + dd + "T100000Z/202611" + dd + "T170000Z"
+    + "&details=" + encodeURIComponent("Visit Royal Bikers on the Royal Enfield stand, Hall 3, Stand 3B20. royalbikers.com")
+    + "&location=" + encodeURIComponent("NEC Birmingham, Hall 3, Stand 3B20");
+  return url;
+}
+document.getElementById("gcal").href = gcal(21);
+
+/* ===== RSVP ===== */
+var chosenDay = null, chosenTopics = [];
+var daysEl = document.getElementById("days"), today = new Date();
+DAYS.forEach(function(d){
+  var b = document.createElement("button"); b.type="button";
+  b.innerHTML = "<small>"+d[0]+"</small><b>"+d[1]+"</b>";
+  b.setAttribute("aria-label", d[0]+" "+d[1]+" November");
+  if(new Date(Date.UTC(2026,10,d[1],17)) < today) b.disabled = true;
+  b.onclick = function(){ daysEl.querySelectorAll("button").forEach(function(x){x.classList.remove("on")}); b.classList.add("on"); chosenDay = d; };
+  daysEl.appendChild(b);
+});
+var pillsEl = document.getElementById("pills");
+TOPICS.forEach(function(t){
+  var b = document.createElement("button"); b.type="button"; b.textContent=t;
+  b.onclick = function(){ b.classList.toggle("on"); var i=chosenTopics.indexOf(t); i<0?chosenTopics.push(t):chosenTopics.splice(i,1); };
+  pillsEl.appendChild(b);
+});
+document.getElementById("rsvpForm").addEventListener("submit", function(e){
+  e.preventDefault();
+  var name = document.getElementById("fName").value.trim(), email = document.getElementById("fEmail").value.trim(), err = document.getElementById("err");
+  if(!name){ err.textContent="Please add your name."; return; }
+  if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){ err.textContent="Please check your email address."; return; }
+  if(!chosenDay){ err.textContent="Pick the day you're planning to come."; return; }
+  err.textContent="";
+  var payload = {name:name,email:email,day:chosenDay[0]+" "+chosenDay[1]+" Nov 2026",interests:chosenTopics.join(", "),source:"MCL26 invite"};
+  function done(){
+    document.getElementById("rsvpForm").style.display="none";
+    var t = document.getElementById("thanks"); t.style.display="block";
+    document.getElementById("thxTitle").textContent = "See you on " + chosenDay[0] + " " + chosenDay[1] + " November, " + name.split(" ")[0];
+    document.getElementById("thxCal").href = gcal(chosenDay[1]);
+    t.scrollIntoView({behavior:"smooth",block:"center"});
+  }
+  if(RSVP_ENDPOINT){
+    fetch(RSVP_ENDPOINT,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload)})
+      .then(function(r){ if(!r.ok) throw 0; done(); })
+      .catch(function(){ err.textContent="That didn't go through. Please try again, or find us on the stand anyway."; });
+  } else { done(); }
+});
+</script>
+</body>
+</html>
