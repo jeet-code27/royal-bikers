@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>RSVP Panel · Royal Bikers</title>
+<style>
+  :root{--ink:#0A0A0A;--ink2:#141312;--ink3:#1d1b19;--line:#2c2926;--orange:#E8590C;--orange2:#ff7a33;--cream:#F5F1EC;--muted:#b9b1a7;--dim:#7d766e;--ok:#5ec27a;
+    --serif:Georgia,"Times New Roman",serif;--sans:Arial,"Helvetica Neue",Helvetica,sans-serif}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--ink);color:var(--cream);font:15px/1.5 var(--sans);-webkit-font-smoothing:antialiased;min-height:100vh}
+  a{color:inherit}
+  button{font:inherit;cursor:pointer}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 20px}
+  .eyebrow{font:700 11px/1.4 var(--sans);letter-spacing:.24em;text-transform:uppercase;color:var(--orange)}
+  h1,h2{font-family:var(--serif);font-weight:normal;line-height:1.15}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border:1.5px solid #3a3632;background:var(--ink2);color:var(--cream);font:700 12px/1 var(--sans);letter-spacing:.1em;text-transform:uppercase;text-decoration:none;border-radius:2px;transition:all .2s;white-space:nowrap}
+  .btn:hover{border-color:var(--orange)}
+  .btn.solid{background:var(--orange);border-color:var(--orange);color:#fff}
+  .btn.solid:hover{background:var(--orange2);border-color:var(--orange2)}
+  input,select{background:var(--ink);border:1px solid #3a3632;color:var(--cream);font:15px var(--sans);padding:11px 12px;border-radius:0;outline:none;width:100%}
+  input:focus,select:focus{border-color:var(--orange)}
+
+  /* login */
+  #login{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;background:radial-gradient(ellipse at 50% 20%,#2a1508,#0A0A0A 60%)}
+  #login form{width:min(380px,100%);background:var(--ink2);border:1px solid var(--line);border-top:3px solid var(--orange);padding:32px}
+  #login img{height:40px;display:block;margin-bottom:22px}
+  #login h1{font-size:28px;margin:8px 0 22px}
+  #login label{display:block;font:700 11px/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:0 0 8px}
+  #login .f{margin-bottom:16px}
+  #login .btn{width:100%;justify-content:center;padding:14px}
+  .err{color:#ff9a6b;font-size:14px;margin-top:12px;min-height:1.2em}
+
+  /* dashboard */
+  #app{display:none;padding-bottom:60px}
+  header{border-bottom:1px solid var(--line);background:var(--ink2);position:sticky;top:0;z-index:5}
+  header .wrap{display:flex;align-items:center;justify-content:space-between;gap:14px;padding-top:14px;padding-bottom:14px;flex-wrap:wrap}
+  header .brand{display:flex;align-items:center;gap:14px}
+  header img{height:34px}
+  header .brand span{font:700 11px/1.3 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--muted);border-left:1px solid var(--line);padding-left:14px}
+  header .actions{display:flex;gap:8px;flex-wrap:wrap}
+  .title{padding:34px 0 22px}
+  .title h1{font-size:clamp(28px,4vw,40px);margin-top:8px}
+  .title p{color:var(--muted);margin-top:6px;font-size:14px}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:14px}
+  .stat{background:var(--ink2);border:1px solid var(--line);padding:18px}
+  .stat small{display:block;font:700 10px/1.3 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--dim);margin-bottom:8px}
+  .stat b{font-family:var(--serif);font-weight:normal;font-size:34px;line-height:1}
+  .stat.hl{background:var(--orange);border-color:var(--orange)}
+  .stat.hl small{color:rgba(255,255,255,.8)}
+  .grid2{display:grid;grid-template-columns:1.4fr 1fr;gap:12px;margin-bottom:26px}
+  .panel{background:var(--ink2);border:1px solid var(--line);padding:20px}
+  .panel h2{font-size:20px;margin-bottom:16px}
+  .bars{display:grid;grid-template-columns:repeat(9,1fr);gap:8px;align-items:end;height:170px}
+  .bar{display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;cursor:pointer;background:none;border:0;color:inherit}
+  .bar i{display:block;width:100%;background:var(--orange);min-height:3px;transition:height .5s}
+  .bar.zero i{background:#3a3632}
+  .bar.on i{background:var(--cream)}
+  .bar b{font:700 13px/1 var(--sans);margin-bottom:6px}
+  .bar small{font:700 10px/1.2 var(--sans);color:var(--dim);margin-top:8px;text-align:center;letter-spacing:.06em}
+  .topics{display:flex;flex-direction:column;gap:9px}
+  .topic{display:grid;grid-template-columns:120px 1fr 32px;gap:10px;align-items:center;font-size:13px}
+  .topic .track{height:8px;background:var(--ink);border:1px solid var(--line)}
+  .topic .track i{display:block;height:100%;background:var(--orange)}
+  .topic b{text-align:right;font-weight:700}
+  .tools{display:flex;gap:10px;margin-bottom:12px;flex-wrap:wrap}
+  .tools input{flex:1 1 260px}
+  .tools select{flex:0 0 190px}
+  .tablewrap{border:1px solid var(--line);overflow-x:auto;background:var(--ink2)}
+  table{width:100%;border-collapse:collapse;min-width:820px}
+  th{text-align:left;font:700 10px/1.3 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--dim);padding:12px 14px;border-bottom:1px solid var(--line);background:var(--ink3);position:sticky;top:0}
+  td{padding:13px 14px;border-bottom:1px solid var(--line);vertical-align:top;font-size:14px}
+  tr:last-child td{border-bottom:0}
+  tr:hover td{background:#191715}
+  td .nm{font-family:var(--serif);font-size:17px}
+  td .sub{font-size:12px;color:var(--dim)}
+  td a.mail{color:var(--muted);text-decoration:none}
+  td a.mail:hover{color:var(--orange)}
+  .day{display:inline-block;background:var(--orange);color:#fff;font:700 11px/1 var(--sans);letter-spacing:.06em;padding:6px 9px;white-space:nowrap}
+  .chip{display:inline-block;border:1px solid #3a3632;border-radius:30px;padding:3px 9px;font-size:12px;margin:0 4px 4px 0;color:var(--muted)}
+  .del{background:none;border:1px solid transparent;color:var(--dim);padding:6px 8px;border-radius:2px}
+  .del:hover{color:#ff9a6b;border-color:#5a2a1a}
+  .empty{padding:50px 20px;text-align:center;color:var(--muted)}
+  .empty b{display:block;font-family:var(--serif);font-weight:normal;font-size:22px;color:var(--cream);margin-bottom:6px}
+  .count{font-size:13px;color:var(--dim);margin:10px 2px 0}
+  .toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(20px);opacity:0;background:var(--cream);color:var(--ink);padding:12px 18px;font-weight:700;font-size:14px;transition:all .3s;z-index:20;pointer-events:none}
+  .toast.show{opacity:1;transform:translateX(-50%)}
+  @media (max-width:900px){.stats{grid-template-columns:1fr 1fr}.grid2{grid-template-columns:1fr}}
+  @media (max-width:520px){.bars{gap:4px;height:140px}.topic{grid-template-columns:100px 1fr 28px}header .brand span{display:none}.tools select{flex:1 1 100%}}
+</style>
+</head>
+<body>
+
+<!-- ============ LOGIN ============ -->
+<section id="login">
+  <form id="loginForm">
+    <img src="img/logo2.png" alt="Royal Bikers">
+    <p class="eyebrow">Motorcycle Live 2026</p>
+    <h1>RSVP panel</h1>
+    <div class="f"><label for="u">Username</label><input id="u" autocomplete="username" required></div>
+    <div class="f"><label for="p">Password</label><input id="p" type="password" autocomplete="current-password" required></div>
+    <button class="btn solid" type="submit">Log in</button>
+    <p class="err" id="loginErr" role="alert"></p>
+  </form>
+</section>
+
+<!-- ============ DASHBOARD ============ -->
+<div id="app">
+  <header>
+    <div class="wrap">
+      <div class="brand"><img src="img/logo2.png" alt="Royal Bikers"><span>RSVP panel<br>Hall 3 · Stand 3B20</span></div>
+      <div class="actions">
+        <button class="btn" id="refresh" type="button">Refresh</button>
+        <a class="btn solid" href="/api/admin/rsvps?format=csv">Download CSV</a>
+        <a class="btn" href="/" target="_blank" rel="noopener">View invite</a>
+        <button class="btn" id="logout" type="button">Log out</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="title">
+      <p class="eyebrow">Responses</p>
+      <h1>Who's coming to the stand</h1>
+      <p id="updated">Loading…</p>
+    </div>
+
+    <div class="stats">
+      <div class="stat hl"><small>Total RSVPs</small><b id="sTotal">0</b></div>
+      <div class="stat"><small>New in last 24h</small><b id="sNew">0</b></div>
+      <div class="stat"><small>Busiest day</small><b id="sDay">–</b></div>
+      <div class="stat"><small>Top interest</small><b id="sTopic" style="font-size:24px">–</b></div>
+    </div>
+
+    <div class="grid2">
+      <div class="panel">
+        <h2>Visitors by day <span style="font:12px var(--sans);color:var(--dim)">· tap a day to filter</span></h2>
+        <div class="bars" id="bars"></div>
+      </div>
+      <div class="panel">
+        <h2>Want to talk about</h2>
+        <div class="topics" id="topics"></div>
+      </div>
+    </div>
+
+    <div class="tools">
+      <input id="q" type="search" placeholder="Search name or email">
+      <select id="fDay"><option value="">All days</option></select>
+    </div>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Name</th><th>Day</th><th>Interests</th><th>Invited as</th><th>Received</th><th></th></tr></thead>
+        <tbody id="rows"></tbody>
+      </table>
+      <div class="empty" id="empty" hidden><b>No RSVPs yet</b>They'll show up here the moment someone sends the form.</div>
+    </div>
+    <p class="count" id="count"></p>
+  </main>
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+var DAYS = ["Sat 21","Sun 22","Mon 23","Tue 24","Wed 25","Thu 26","Fri 27","Sat 28","Sun 29"];
+var TOPICS = ["Ladakh","Spiti","Rajasthan","Kerala","North-East India","Nepal","Bhutan","Not sure yet"];
+var data = [], timer = null;
+var $ = function(id){ return document.getElementById(id); };
+var fmt = new Intl.DateTimeFormat("en-GB",{day:"numeric",month:"short",hour:"2-digit",minute:"2-digit"});
+function esc(s){ return String(s==null?"":s).replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];}); }
+function toast(m){ var t=$("toast"); t.textContent=m; t.classList.add("show"); clearTimeout(t._h); t._h=setTimeout(function(){t.classList.remove("show")},2200); }
+function dayKey(r){ return (r.day||"").slice(0,6); }
+
+DAYS.forEach(function(d){ var o=document.createElement("option"); o.value=d; o.textContent=d+" Nov"; $("fDay").appendChild(o); });
+
+function showApp(){ $("login").style.display="none"; $("app").style.display="block"; load(); clearInterval(timer); timer=setInterval(load,60000); }
+function showLogin(){ $("app").style.display="none"; $("login").style.display="flex"; clearInterval(timer); }
+
+fetch("/api/admin/login",{credentials:"same-origin"}).then(function(r){return r.json()}).then(function(s){
+  if(s.loggedIn) showApp();
+  else if(!s.configured) $("loginErr").textContent="Admin login isn't set up yet. Add ADMIN_USERNAME and ADMIN_PASSWORD in Vercel.";
+}).catch(function(){});
+
+$("loginForm").addEventListener("submit",function(e){
+  e.preventDefault(); $("loginErr").textContent="";
+  fetch("/api/admin/login",{method:"POST",credentials:"same-origin",headers:{"Content-Type":"application/json"},body:JSON.stringify({username:$("u").value,password:$("p").value})})
+    .then(function(r){ return r.json().then(function(j){ if(!r.ok) throw new Error(j.error||"Login failed"); }); })
+    .then(function(){ $("p").value=""; showApp(); })
+    .catch(function(err){ $("loginErr").textContent=err.message; });
+});
+$("logout").onclick=function(){ fetch("/api/admin/login",{method:"DELETE",credentials:"same-origin"}).then(showLogin); };
+$("refresh").onclick=function(){ load(true); };
+$("q").oninput=render; $("fDay").onchange=render;
+
+function load(manual){
+  fetch("/api/admin/rsvps",{credentials:"same-origin"}).then(function(r){
+    if(r.status===401){ showLogin(); throw new Error("Session expired, please log in again."); }
+    return r.json().then(function(j){ if(!r.ok) throw new Error(j.error||"Could not load"); return j; });
+  }).then(function(j){
+    data=j.rsvps||[]; $("updated").textContent="Updated "+fmt.format(new Date())+" · refreshes every minute";
+    summary(); render(); if(manual) toast("Up to date");
+  }).catch(function(err){ $("updated").textContent=err.message; });
+}
+
+function summary(){
+  var day={}, top={}, now=Date.now(), fresh=0;
+  DAYS.forEach(function(d){day[d]=0}); TOPICS.forEach(function(t){top[t]=0});
+  data.forEach(function(r){ if(day[dayKey(r)]!=null) day[dayKey(r)]++; (r.interests||[]).forEach(function(t){ if(top[t]!=null) top[t]++; }); if(now-new Date(r.createdAt)<864e5) fresh++; });
+  $("sTotal").textContent=data.length; $("sNew").textContent=fresh;
+  var bd=DAYS.slice().sort(function(a,b){return day[b]-day[a]})[0];
+  $("sDay").textContent=day[bd]?bd:"–";
+  var bt=TOPICS.slice().sort(function(a,b){return top[b]-top[a]})[0];
+  $("sTopic").textContent=top[bt]?bt:"–";
+  var max=Math.max.apply(null,DAYS.map(function(d){return day[d]}))||1, sel=$("fDay").value;
+  $("bars").innerHTML=DAYS.map(function(d){
+    return '<button type="button" class="bar'+(day[d]?'':' zero')+(sel===d?' on':'')+'" data-d="'+d+'" title="'+d+' Nov: '+day[d]+'"><b>'+day[d]+'</b><i style="height:'+Math.round(day[d]/max*100)+'%"></i><small>'+d.replace(" ","<br>")+'</small></button>';
+  }).join("");
+  $("bars").querySelectorAll(".bar").forEach(function(b){ b.onclick=function(){ $("fDay").value=$("fDay").value===b.dataset.d?"":b.dataset.d; summary(); render(); }; });
+  var tmax=Math.max.apply(null,TOPICS.map(function(t){return top[t]}))||1;
+  $("topics").innerHTML=TOPICS.map(function(t){ return '<div class="topic"><span>'+t+'</span><div class="track"><i style="width:'+Math.round(top[t]/tmax*100)+'%"></i></div><b>'+top[t]+'</b></div>'; }).join("");
+}
+
+function render(){
+  var q=$("q").value.trim().toLowerCase(), d=$("fDay").value;
+  var list=data.filter(function(r){ return (!d||dayKey(r)===d) && (!q||(r.name+" "+r.email).toLowerCase().indexOf(q)>=0); });
+  $("rows").innerHTML=list.map(function(r){
+    return '<tr><td><div class="nm">'+esc(r.name)+'</div><a class="mail" href="mailto:'+esc(r.email)+'">'+esc(r.email)+'</a></td>'
+      +'<td><span class="day">'+esc(dayKey(r))+' Nov</span></td>'
+      +'<td>'+((r.interests||[]).map(function(t){return '<span class="chip">'+esc(t)+'</span>'}).join("")||'<span class="sub">–</span>')+'</td>'
+      +'<td>'+(r.invitedAs?esc(r.invitedAs):'<span class="sub">General link</span>')+'</td>'
+      +'<td>'+fmt.format(new Date(r.createdAt))+(r.submissions>1?'<div class="sub">updated '+fmt.format(new Date(r.updatedAt))+'</div>':'')+'</td>'
+      +'<td><button class="del" type="button" data-id="'+r._id+'" data-n="'+esc(r.name)+'" title="Delete">Delete</button></td></tr>';
+  }).join("");
+  $("empty").hidden=list.length>0;
+  if(!data.length) $("empty").innerHTML="<b>No RSVPs yet</b>They'll show up here the moment someone sends the form.";
+  else if(!list.length) $("empty").innerHTML="<b>No matches</b>Try a different search or day.";
+  $("count").textContent=data.length?("Showing "+list.length+" of "+data.length):"";
+  $("rows").querySelectorAll(".del").forEach(function(b){ b.onclick=function(){
+    if(!confirm("Delete the RSVP from "+b.dataset.n+"? This can't be undone.")) return;
+    fetch("/api/admin/rsvps?id="+b.dataset.id,{method:"DELETE",credentials:"same-origin"}).then(function(r){ if(!r.ok) throw 0; data=data.filter(function(x){return x._id!==b.dataset.id}); summary(); render(); toast("Deleted"); }).catch(function(){ toast("Couldn't delete"); });
+  }; });
+}
+</script>
+</body>
+</html>

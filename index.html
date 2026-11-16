@@ -560,6 +560,7 @@
         <label class="l">I'd like to talk about</label>
         <div class="pills" id="pills"></div>
       </div>
+      <div style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden" aria-hidden="true"><label for="fWebsite">Website</label><input type="text" id="fWebsite" tabindex="-1" autocomplete="off"></div>
       <button type="submit" class="btn btn-solid">Send my RSVP</button>
       <p class="err" id="err" role="alert"></p>
       <p class="fine">We'll only use your details to plan your visit and send you Royal Bikers news.</p>
@@ -622,9 +623,9 @@
 
 <script>
 /* ===== CONFIG ===== */
-// Paste a form endpoint here (Brevo form, Formspree, Google Apps Script web app, etc.).
-// It receives a JSON POST: {name,email,day,interests,source}. Leave empty to show the thank-you screen only.
-var RSVP_ENDPOINT = "";
+// RSVPs are saved by the Vercel function /api/rsvp (MongoDB, database "royalbikers") and shown at /admin.
+// On a preview host with no API (claude.ai artifact, local file) the form only shows the thank-you screen.
+var RSVP_ENDPOINT = (/^https?:$/.test(location.protocol) && !/claude\.ai|claudeusercontent|anthropic/.test(location.hostname)) ? "/api/rsvp" : "";
 var SHOW_START = new Date("2026-11-21T10:00:00Z");
 var SHOW_END   = new Date("2026-11-29T17:00:00Z");
 var DAYS = [["Sat",21],["Sun",22],["Mon",23],["Tue",24],["Wed",25],["Thu",26],["Fri",27],["Sat",28],["Sun",29]];
@@ -722,7 +723,8 @@ document.getElementById("rsvpForm").addEventListener("submit", function(e){
   if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){ err.textContent="Please check your email address."; return; }
   if(!chosenDay){ err.textContent="Pick the day you're planning to come."; return; }
   err.textContent="";
-  var payload = {name:name,email:email,day:chosenDay[0]+" "+chosenDay[1]+" Nov 2026",interests:chosenTopics.join(", "),source:"MCL26 invite"};
+  var payload = {name:name,email:email,day:chosenDay[0]+" "+chosenDay[1]+" Nov 2026",interests:chosenTopics,invitedAs:NAME,source:"MCL26 invite",website:document.getElementById("fWebsite").value};
+  var btn = this.querySelector("button[type=submit]"); btn.disabled = true; btn.textContent = "Sending…";
   function done(){
     document.getElementById("rsvpForm").style.display="none";
     var t = document.getElementById("thanks"); t.style.display="block";
@@ -732,8 +734,8 @@ document.getElementById("rsvpForm").addEventListener("submit", function(e){
   }
   if(RSVP_ENDPOINT){
     fetch(RSVP_ENDPOINT,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload)})
-      .then(function(r){ if(!r.ok) throw 0; done(); })
-      .catch(function(){ err.textContent="That didn't go through. Please try again, or find us on the stand anyway."; });
+      .then(function(r){ return r.json().catch(function(){return {}}).then(function(j){ if(!r.ok) throw new Error(j.error||""); done(); }); })
+      .catch(function(e){ btn.disabled=false; btn.textContent="Send my RSVP"; err.textContent=(e&&e.message)||"That didn't go through. Please try again, or find us on the stand anyway."; });
   } else { done(); }
 });
 </script>
