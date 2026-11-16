@@ -45,8 +45,11 @@ export async function readJson(req) {
 const COOKIE = "rb_admin";
 const MAX_AGE = 60 * 60 * 24 * 7;
 
+// Env values pasted into Vercel often pick up spaces, line breaks or wrapping quotes.
+const envClean = (v) => String(v ?? "").trim().replace(/^(['"])(.*)\1$/, "$2").trim();
+
 function creds() {
-  const u = process.env.ADMIN_USERNAME, p = process.env.ADMIN_PASSWORD;
+  const u = envClean(process.env.ADMIN_USERNAME), p = envClean(process.env.ADMIN_PASSWORD);
   if (!u || !p) return null;
   return { u, p, secret: process.env.SESSION_SECRET || `${u}:${p}:royalbikers` };
 }
@@ -59,8 +62,8 @@ const sign = (payload, secret) => createHmac("sha256", secret).update(payload).d
 export function checkLogin(username, password) {
   const c = creds();
   if (!c) return false;
-  const uOk = safeEqual(String(username || "").trim(), c.u);
-  const pOk = safeEqual(String(password || ""), c.p);
+  const uOk = safeEqual(String(username || "").trim().toLowerCase(), c.u.toLowerCase());
+  const pOk = safeEqual(String(password || "").trim(), c.p);
   return uOk && pOk;
 }
 export const loginConfigured = () => creds() !== null;
