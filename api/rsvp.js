@@ -1,7 +1,7 @@
 import { rsvps, send, readJson } from "./_lib.js";
 
 const DAYS = ["Sat 21", "Sun 22", "Mon 23", "Tue 24", "Wed 25", "Thu 26", "Fri 27", "Sat 28", "Sun 29"];
-const TOPICS = ["Ladakh", "Spiti", "Rajasthan", "Kerala", "North-East India", "Nepal", "Bhutan", "Not sure yet"];
+const TOPICS = ["Ladakh", "Spiti", "Rajasthan", "Kerala", "North-East India", "Nepal", "Not sure yet"];
 const clean = (v, max) => String(v ?? "").replace(/[\u0000-\u001f<>]/g, "").trim().slice(0, max);
 
 export default async function handler(req, res) {

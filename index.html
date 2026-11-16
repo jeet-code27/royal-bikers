@@ -9,7 +9,7 @@
 <meta name="theme-color" content="#0A0A0A">
 <meta property="og:title" content="You're invited: Royal Bikers at Motorcycle Live 2026">
 <meta property="og:description" content="Royal Enfield stand · Hall 3 · Stand 3B20 · NEC Birmingham · 21–29 November">
-<meta property="og:image" content="og-image.png">
+<meta property="og:image" content="og-image.jpg">
 <meta property="og:type" content="website">
 <style>
   :root{
@@ -133,6 +133,8 @@
   .card svg{width:44px;height:44px;margin-bottom:22px;stroke:var(--orange);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
   .card h3{font-size:23px;margin-bottom:10px}
   .card p{color:var(--muted);font-size:15px}
+  .founder-pic{width:72px;height:72px;border-radius:50%;object-fit:cover;object-position:50% 12%;border:3px solid var(--orange);display:block;margin-bottom:18px}
+  .sig .avatar{width:68px;height:68px;border-radius:50%;object-fit:cover;object-position:50% 12%;border:3px solid var(--orange);flex:0 0 auto}
   .card.gold{background:linear-gradient(160deg,#2a1a0c,#141312 70%);border-top-color:#d9a441}
   .card.gold svg{stroke:#d9a441}
 
@@ -237,6 +239,14 @@
   .tour span{font-size:13px;color:#cfc7bd;letter-spacing:.04em}
   .tour .go{position:absolute;top:16px;right:16px;z-index:2;font:700 10px/1 var(--sans);letter-spacing:.18em;text-transform:uppercase;background:var(--orange);color:#fff;padding:8px 10px;opacity:0;transform:translateY(-6px);transition:all .3s}
   .tour:hover .go{opacity:1;transform:none}
+  .tour-all{background:var(--orange);border-color:var(--orange);display:flex;align-items:center;justify-content:center;text-align:center}
+  .tour-all:after{display:none}
+  .tour-all .all-in{padding:28px}
+  .tour-all img{width:150px;height:auto;margin:0 auto 22px;filter:brightness(0) invert(1)}
+  .tour-all b{display:block;font-family:var(--serif);font-weight:normal;font-size:26px;line-height:1.2;color:#fff;margin-bottom:10px}
+  .tour-all span{font:700 12px/1.4 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:#fff}
+  .tour-all:hover{background:var(--orange2)}
+  .tour-all:hover img{transform:none}
   .gallery{padding:0;display:grid;grid-template-columns:1.4fr 1fr;grid-template-rows:auto;gap:4px;background:var(--ink)}
   .gallery figure{position:relative;margin:0;overflow:hidden;min-height:340px}
   .gallery img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s}
@@ -327,7 +337,7 @@
       <div><dt>Stand</dt><dd>Hall 3 &middot; 3B20</dd></div>
     </dl>
     <button class="stamp-btn" id="stampBtn" aria-label="Stamp the permit to open the invitation">
-      <span class="stamp"><strong>12</strong>years</span>
+      <span class="stamp"><small style="font-size:7px;letter-spacing:.1em">Coming up to</small><strong>12</strong>years</span>
       <span class="hint">Tap the seal to stamp your permit<small>Your invitation opens once it's approved</small></span>
     </button>
     <div class="inked" aria-hidden="true">Approved<strong>Hall 3</strong>Royal Bikers</div>
@@ -367,7 +377,7 @@
       <p class="eyebrow">Motorcycle Live 2026 &middot; NEC Birmingham</p>
       <p class="greet" id="greet"></p>
       <h1>You're invited to <em>Hall&nbsp;3</em></h1>
-      <p class="lede">Twelve years of riding India, Nepal and Bhutan on Royal Enfields. This November we bring the Himalaya to Birmingham, and we'd like you on the stand with us.</p>
+      <p class="lede">Coming up to 12 years of riding the Himalayas, North and North-East India, Kerala and Nepal on Royal Enfields. This November we bring the Himalaya to Birmingham, and we'd like you on the stand with us.</p>
       <div class="chip">
         <div><small>Find us on the</small><b>Royal Enfield stand</b></div>
         <div><small>Hall</small><b>3</b></div>
@@ -377,7 +387,7 @@
         <a href="#rsvp" class="btn btn-solid">Count me in</a>
         <a href="#where" class="btn btn-ghost">Event details</a>
       </div>
-      <p class="when">21–29 November 2026 &nbsp;&middot;&nbsp; Doors 10am to 5pm daily</p>
+      <p class="when">21–29 November 2026 &nbsp;&middot;&nbsp; Doors open 10am to 5pm daily</p>
     </div>
   </div>
   <a href="#letter" class="scroll-cue">Scroll</a>
@@ -385,9 +395,9 @@
 
 <div class="stats">
   <div class="wrap">
-    <div><b>12</b><span>Years on the road</span></div>
-    <div><b>9</b><span>Guided routes</span></div>
-    <div><b>3</b><span>Countries</span></div>
+    <div><b>12</b><span>Years, coming up</span></div>
+    <div><b>8</b><span>Guided routes</span></div>
+    <div><b>2</b><span>Countries</span></div>
     <div><b>9</b><span>Days at the NEC</span></div>
   </div>
 </div>
@@ -396,19 +406,20 @@
 <section class="letter" id="letter">
   <div class="wrap">
     <div class="reveal">
-      <div class="big12">12<small>Years of Royal Bikers</small></div>
+      <div class="big12">12<small>Coming up to 12 years of Royal Bikers</small></div>
       <div class="photo">
-        <img src="img/about-main-1.jpg" alt="A Royal Bikers group of riders from the UK and India" loading="lazy">
-        <small>Riders from the UK and India, one Royal Bikers group</small>
+        <img src="img/about-main-1.jpg" alt="A Royal Bikers group of riders from the UK" loading="lazy">
+        <small>Riders from the UK, one Royal Bikers group</small>
       </div>
     </div>
     <div class="reveal">
       <p class="eyebrow">A note from our founder</p>
       <h2>Come and say hello in Hall&nbsp;3</h2>
-      <p>For twelve years we have led riders from the UK and around the world over the passes of Ladakh and Spiti, through the deserts of Rajasthan, down the backroads of Kerala and on into Nepal and Bhutan.</p>
-      <p>This year we mark that milestone at Motorcycle Live, as official touring partners of Royal Enfield, on their stand for all nine days of the show. Pull up a seat, tell us where you've always wanted to ride, and we'll show you how we'd get you there.</p>
+      <p>For almost twelve years we have led riders from the UK and around the world over the passes of Ladakh and Spiti, through the deserts of Rajasthan, across North-East India, down the backroads of Kerala and on into Nepal.</p>
+      <p>As we come up to twelve years, we're at Motorcycle Live, as official touring partners of Royal Enfield, on their stand for all nine days of the show. Pull up a seat, tell us where you've always wanted to ride, and we'll show you how we'd get you there.</p>
       <p>We'd love to see you.</p>
       <div class="sig">
+        <img class="avatar" src="img/manish.jpg" alt="Manish Bhaskar">
         <div><span class="names">Manish Bhaskar</span><small>Founder &amp; Ride Leader, Royal Bikers</small></div>
       </div>
     </div>
@@ -424,15 +435,15 @@
       <p>One stop on the Royal Enfield stand covers the bikes, the routes and the people who ride them with you.</p>
     </div>
     <div class="cards">
-      <div class="card reveal">
-        <svg viewBox="0 0 48 48"><circle cx="17" cy="16" r="6"/><circle cx="33" cy="16" r="6"/><path d="M5 40c1-7 6-11 12-11s11 4 12 11M23 40c1-6 5-10 10-10s9 4 10 10"/></svg>
-        <h3>Meet the team</h3>
-        <p>Talk to the people who plan and lead every Royal Bikers ride, and ask them anything about the road.</p>
+      <div class="card founder-card reveal">
+        <img class="founder-pic" src="img/manish.jpg" alt="Manish Bhaskar, founder of Royal Bikers" loading="lazy">
+        <h3>Meet the founder</h3>
+        <p>Say hello to Manish Bhaskar, or Manu, who founded Royal Bikers and still leads the rides. Ask him anything about the road.</p>
       </div>
       <div class="card reveal">
         <svg viewBox="0 0 48 48"><path d="M4 40 L16 18 L24 30 L32 14 L44 40Z"/><path d="M28 22 L32 14 L36 22"/><circle cx="38" cy="9" r="3"/></svg>
         <h3>Plan your 2027 ride</h3>
-        <p>Go through routes, dates and riding levels for all nine tours, from Kerala to the high Himalaya.</p>
+        <p>Go through routes, dates and riding levels for all eight tours, from Kerala to the high Himalaya.</p>
       </div>
       <div class="card reveal">
         <svg viewBox="0 0 48 48"><circle cx="11" cy="33" r="7"/><circle cx="37" cy="33" r="7"/><path d="M11 33 L19 21 H29 L37 33 M19 21 L16 15 H11 M29 21 L32 13 H37 M24 21 L26 33 H11"/></svg>
@@ -441,8 +452,8 @@
       </div>
       <div class="card gold reveal">
         <svg viewBox="0 0 48 48"><path d="M24 5 L29 17 L42 18 L32 27 L35 40 L24 33 L13 40 L16 27 L6 18 L19 17Z"/></svg>
-        <h3>Twelve years, celebrated</h3>
-        <p>We're marking the milestone on the stand, with something special for riders who come and find us. Watch this space.</p>
+        <h3>Coming up to twelve years</h3>
+        <p>We're marking the run-up to twelve years on the stand, with something special for riders who come and find us. Watch this space.</p>
       </div>
     </div>
   </div>
@@ -453,7 +464,7 @@
   <div class="wrap">
     <div class="head reveal">
       <p class="eyebrow">The routes</p>
-      <h2>Nine roads we'll talk you through</h2>
+      <h2>Eight roads we'll talk you through</h2>
     </div>
     <div class="tours">
       <a class="tour reveal" href="https://royalbikers.com/upcoming-tours/kerala/" target="_blank" rel="noopener"><img src="img/Kerala-1.jpg" alt="Kerala tour" loading="lazy"><span class="go">View tour</span><div class="cap"><b>Kerala</b><span>South India</span></div></a>
@@ -464,8 +475,7 @@
       <a class="tour reveal" href="https://royalbikers.com/category-featured-tours/ladakh/" target="_blank" rel="noopener"><img src="img/Ladakh-Zanskar.jpg" alt="Epic Ladakh Adventure, Zanskar" loading="lazy"><span class="go">View tour</span><div class="cap"><b>Epic Ladakh Adventure–Zanskar</b><span>Ladakh and Zanskar</span></div></a>
       <a class="tour reveal" href="https://royalbikers.com/upcoming-tours/spellbound-spiti/" target="_blank" rel="noopener"><img src="img/Spiti-1.jpg" alt="Spellbound Spiti tour" loading="lazy"><span class="go">View tour</span><div class="cap"><b>Spellbound Spiti</b><span>Himachal Pradesh</span></div></a>
       <a class="tour reveal" href="https://royalbikers.com/" target="_blank" rel="noopener"><img src="img/Nepal.jpg" alt="Nepal tour" loading="lazy"><span class="go">View tour</span><div class="cap"><b>Nepal</b><span>Across the border</span></div></a>
-      <a class="tour reveal" href="https://royalbikers.com/upcoming-tours/bhutan/" target="_blank" rel="noopener"><img src="img/Bhutan.jpg" alt="Bhutan tour" loading="lazy"><span class="go">View tour</span><div class="cap"><b>Bhutan</b><span>The kingdom in the clouds</span></div></a>
-    </div>
+      <a class="tour tour-all reveal" href="https://royalbikers.com/" target="_blank" rel="noopener"><div class="all-in"><img src="img/logo2.png" alt=""><b>See every date and price</b><span>All tours on royalbikers.com &rarr;</span></div></a>    </div>
     <div class="includes reveal">
       <p>A well-maintained Royal Enfield, fuel included</p>
       <p>Ride captain and trained mechanic on every ride</p>
@@ -510,7 +520,7 @@
           <h3>Royal Enfield stand</h3>
           <dl>
             <dt>Dates</dt><dd>Sat 21 – Sun 29 November 2026</dd>
-            <dt>Hours</dt><dd>10am to 5pm daily</dd>
+            <dt>Hours</dt><dd>Doors open 10am to 5pm daily</dd>
             <dt>Venue</dt><dd>NEC Birmingham, B40 1NT</dd>
             <dt>Find us</dt><dd>Hall 3, Stand 3B20</dd>
           </dl>
@@ -614,7 +624,7 @@
       <a href="tel:+447436828877"><svg class="ico"><use href="#i-tel"/></svg>UK +44 7436 828877</a>
       <a href="tel:+919891599599"><svg class="ico"><use href="#i-tel"/></svg>India +91 98915 99599</a>
     </div>
-    <p>Official touring partners of Royal Enfield. Guided motorcycle tours across India, Nepal and Bhutan.</p>
+    <p>Official touring partners of Royal Enfield. Guided motorcycle tours across the Himalayas, North and North-East India, Kerala and Nepal.</p>
     <p class="by">Powered by Biz Box Story</p>
   </div>
 </footer>
@@ -629,7 +639,7 @@ var RSVP_ENDPOINT = (/^https?:$/.test(location.protocol) && !/claude\.ai|claudeu
 var SHOW_START = new Date("2026-11-21T10:00:00Z");
 var SHOW_END   = new Date("2026-11-29T17:00:00Z");
 var DAYS = [["Sat",21],["Sun",22],["Mon",23],["Tue",24],["Wed",25],["Thu",26],["Fri",27],["Sat",28],["Sun",29]];
-var TOPICS = ["Ladakh","Spiti","Rajasthan","Kerala","North-East India","Nepal","Bhutan","Not sure yet"];
+var TOPICS = ["Ladakh","Spiti","Rajasthan","Kerala","North-East India","Nepal","Not sure yet"];
 
 /* ===== Personalisation: ?name=Sarah or #Sarah ===== */
 function getName(){
