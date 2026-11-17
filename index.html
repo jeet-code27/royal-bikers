@@ -325,22 +325,22 @@
 <div id="gate" role="dialog" aria-label="Open your invitation">
   <div class="permit" id="permit">
     <div class="row">
-      <div class="tiny"><img class="rb-logo" src="img/logo2.png" alt="Royal Bikers">Ride Permit</div>
+      <div class="tiny"><img class="rb-logo" src="img/logo2.png" alt="Royal Bikers">Invitation</div>
       <div class="no">Nº MCL26&middot;3B20</div>
     </div>
-    <h2>Permit to enter Hall 3</h2>
-    <p class="to" id="permitTo">Issued to every rider on our list</p>
+    <h2>Your invitation to Hall 3</h2>
+    <p class="to" id="permitTo">For every rider on our list</p>
     <dl>
       <div><dt>Route</dt><dd>Your door to the NEC</dd></div>
       <div><dt>Valid</dt><dd>21–29 Nov 2026</dd></div>
       <div><dt>Checkpoint</dt><dd>Royal Enfield stand</dd></div>
       <div><dt>Stand</dt><dd>Hall 3 &middot; 3B20</dd></div>
     </dl>
-    <button class="stamp-btn" id="stampBtn" aria-label="Stamp the permit to open the invitation">
+    <button class="stamp-btn" id="stampBtn" aria-label="Tap the seal to open your invitation">
       <span class="stamp"><small style="font-size:7px;letter-spacing:.1em">Coming up to</small><strong>12</strong>years</span>
-      <span class="hint">Tap the seal to stamp your permit<small>Your invitation opens once it's approved</small></span>
+      <span class="hint">Tap the seal to open your invitation<small>It opens as soon as it's stamped</small></span>
     </button>
-    <div class="inked" aria-hidden="true">Approved<strong>Hall 3</strong>Royal Bikers</div>
+    <div class="inked" aria-hidden="true">Invited<strong>Hall 3</strong>Royal Bikers</div>
   </div>
 </div>
 
@@ -564,7 +564,7 @@
       <p class="fine">We'll only use your details to plan your visit and send you Royal Bikers news.</p>
     </form>
     <div class="thanks" id="thanks">
-      <p class="eyebrow">Permit approved</p>
+      <p class="eyebrow">You're on the list</p>
       <h3 id="thxTitle">See you in Hall 3</h3>
       <p id="thxBody">We've got you down. Look for the Royal Enfield stand, Stand 3B20.</p>
       <div class="links">
@@ -640,7 +640,7 @@ function getName(){
 }
 var NAME = getName();
 if(NAME){
-  document.getElementById("permitTo").textContent = "Issued to " + NAME;
+  document.getElementById("permitTo").textContent = "Specially for " + NAME;
   document.getElementById("greet").textContent = "Dear " + NAME + ",";
   document.getElementById("fName").value = NAME;
 }
