@@ -29,9 +29,9 @@ export default async function handler(req, res) {
   const list = await col.find({}, { projection: { userAgent: 0 } }).sort({ createdAt: -1 }).limit(5000).toArray();
 
   if (url.searchParams.get("format") === "csv") {
-    const head = ["Received", "Name", "Email", "Day", "Interests", "Invited as", "Source", "Times submitted"];
+    const head = ["Received", "Name", "Email", "Mobile", "Day", "Interests", "Invited as", "Source", "Times submitted"];
     const rows = list.map((r) => [
-      new Date(r.createdAt).toISOString(), r.name, r.email, r.day, (r.interests || []).join("; "),
+      new Date(r.createdAt).toISOString(), r.name, r.email, r.phone, r.day, (r.interests || []).join("; "),
       r.invitedAs, r.source, r.submissions,
     ]);
     const csv = "﻿" + [head, ...rows].map((r) => r.map(csvCell).join(",")).join("\r\n");

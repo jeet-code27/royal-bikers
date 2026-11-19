@@ -181,6 +181,9 @@
   .f2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
   label.l{display:block;font:700 11px/1 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin:0 0 9px}
   .field{margin-bottom:22px}
+  input[type=tel]{width:100%;background:var(--ink);border:1px solid #3a3632;color:var(--cream);font:16px var(--sans);padding:14px 14px;border-radius:0;outline:none;transition:border-color .2s}
+  input::placeholder{color:#5f5953}
+  .hint-sm{font-size:12px;color:var(--dim);margin-top:7px}
   input[type=text],input[type=email]{width:100%;background:var(--ink);border:1px solid #3a3632;color:var(--cream);font:16px var(--sans);padding:14px 14px;border-radius:0;outline:none;transition:border-color .2s}
   input:focus{border-color:var(--orange)}
   .days{display:grid;grid-template-columns:repeat(9,1fr);gap:6px}
@@ -551,6 +554,11 @@
         <div class="field"><label class="l" for="fEmail">Email</label><input type="email" id="fEmail" autocomplete="email" required></div>
       </div>
       <div class="field">
+        <label class="l" for="fPhone">Mobile number</label>
+        <input type="tel" id="fPhone" autocomplete="tel" inputmode="tel" placeholder="+44 7700 900123" required>
+        <p class="hint-sm">So the team can call or WhatsApp you about your visit. Include your country code.</p>
+      </div>
+      <div class="field">
         <label class="l">Which day?</label>
         <div class="days" id="days"></div>
       </div>
@@ -719,9 +727,11 @@ document.getElementById("rsvpForm").addEventListener("submit", function(e){
   var name = document.getElementById("fName").value.trim(), email = document.getElementById("fEmail").value.trim(), err = document.getElementById("err");
   if(!name){ err.textContent="Please add your name."; return; }
   if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){ err.textContent="Please check your email address."; return; }
+  var phone = document.getElementById("fPhone").value.trim(), digits = phone.replace(/\D/g,"");
+  if(digits.length < 7 || digits.length > 15 || !/^\+?[\d\s().-]+$/.test(phone)){ err.textContent="Please add a mobile number we can reach you on, with your country code."; document.getElementById("fPhone").focus(); return; }
   if(!chosenDay){ err.textContent="Pick the day you're planning to come."; return; }
   err.textContent="";
-  var payload = {name:name,email:email,day:chosenDay[0]+" "+chosenDay[1]+" Nov 2026",interests:chosenTopics,invitedAs:NAME,source:"MCL26 invite",website:document.getElementById("fWebsite").value};
+  var payload = {name:name,email:email,phone:phone,day:chosenDay[0]+" "+chosenDay[1]+" Nov 2026",interests:chosenTopics,invitedAs:NAME,source:"MCL26 invite",website:document.getElementById("fWebsite").value};
   var btn = this.querySelector("button[type=submit]"); btn.disabled = true; btn.textContent = "Sending…";
   function done(){
     document.getElementById("rsvpForm").style.display="none";

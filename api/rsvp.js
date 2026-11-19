@@ -22,6 +22,10 @@ export default async function handler(req, res) {
 
   if (!name) return send(res, 400, { error: "Please add your name." });
   if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) return send(res, 400, { error: "Please check your email address." });
+  const phone = clean(body.phone, 30);
+  const digits = phone.replace(/\D/g, "");
+  if (digits.length < 7 || digits.length > 15 || !/^\+?[\d\s().-]+$/.test(phone))
+    return send(res, 400, { error: "Please add a mobile number we can reach you on, with your country code." });
   if (!day) return send(res, 400, { error: "Pick the day you're planning to come." });
 
   const now = new Date();
@@ -32,7 +36,7 @@ export default async function handler(req, res) {
       { email },
       {
         $set: {
-          name, email, day: `${day} Nov 2026`, interests,
+          name, email, phone, day: `${day} Nov 2026`, interests,
           invitedAs: clean(body.invitedAs, 40),
           source: clean(body.source, 40) || "MCL26 invite",
           userAgent: clean(req.headers["user-agent"], 200),
