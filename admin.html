@@ -101,6 +101,36 @@
   .toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(20px);opacity:0;background:var(--cream);color:var(--ink);padding:12px 18px;font-weight:700;font-size:14px;transition:all .3s;z-index:20;pointer-events:none}
   .toast.show{opacity:1;transform:translateX(-50%)}
   @media (max-width:900px){.stats{grid-template-columns:1fr 1fr}.grid2{grid-template-columns:1fr}}
+  /* Phones: compact header, RSVP list as cards instead of a wide table */
+  @media (max-width:700px){
+    header{position:static}
+    header .wrap{gap:12px}
+    header .actions{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;width:100%}
+    header .actions .btn{justify-content:center;padding:11px 4px;font-size:10px;letter-spacing:.06em}
+    .long{display:none}
+    .title{padding:24px 0 16px}
+    .stat{padding:14px}
+    .stat b{font-size:28px}
+    .grid2{margin-bottom:18px}
+    .tablewrap{overflow:visible;background:none;border:0}
+    table{min-width:0}
+    thead{display:none}
+    table,tbody{display:block}
+    tr{display:grid;grid-template-columns:1fr 1fr;column-gap:14px;position:relative;background:var(--ink2);border:1px solid var(--line);border-left:3px solid var(--orange);padding:16px;margin-bottom:10px}
+    td{display:block;padding:0;border:0;margin-top:12px;min-width:0}
+    td:nth-child(1){grid-column:1/-1;margin-top:0;padding-right:64px}
+    td:nth-child(3){grid-column:1/-1}
+    td[data-l]:before{content:attr(data-l);display:block;font:700 9px/1.3 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--dim);margin-bottom:5px}
+    td.act{position:absolute;top:10px;right:8px;margin:0}
+    tr:hover td{background:none}
+    td .nm{font-size:19px}
+    td a.mail{word-break:break-all}
+    .ph{margin-top:8px}
+    .ph a.mail{font-size:16px}
+    .wa{padding:8px 12px;font-size:11px}
+    .empty{background:var(--ink2);border:1px solid var(--line)}
+    .toast{width:calc(100% - 32px);text-align:center}
+  }
   @media (max-width:520px){.bars{gap:4px;height:140px}.topic{grid-template-columns:100px 1fr 28px}header .brand span{display:none}.tools select{flex:1 1 100%}}
 </style>
 </head>
@@ -133,8 +163,8 @@
       <div class="brand"><img src="img/logo2.png" alt="Royal Bikers"><span>RSVP panel<br>Hall 3 · Stand 3B20</span></div>
       <div class="actions">
         <button class="btn" id="refresh" type="button">Refresh</button>
-        <a class="btn solid" href="/api/admin/rsvps?format=csv">Download CSV</a>
-        <a class="btn" href="/" target="_blank" rel="noopener">View invite</a>
+        <a class="btn solid" href="/api/admin/rsvps?format=csv"><span class="long">Download&nbsp;</span>CSV</a>
+        <a class="btn" href="/" target="_blank" rel="noopener"><span class="long">View&nbsp;</span>Invite</a>
         <button class="btn" id="logout" type="button">Log out</button>
       </div>
     </div>
@@ -190,6 +220,15 @@ var fmt = new Intl.DateTimeFormat("en-GB",{day:"numeric",month:"short",hour:"2-d
 function esc(s){ return String(s==null?"":s).replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];}); }
 function toast(m){ var t=$("toast"); t.textContent=m; t.classList.add("show"); clearTimeout(t._h); t._h=setTimeout(function(){t.classList.remove("show")},2200); }
 function dayKey(r){ return (r.day||"").slice(0,6); }
+// WhatsApp needs the international form. "00…" is an international prefix; a single leading 0
+// with no "+" is a UK local number (the show is in the UK), so 07700 900123 → 447700900123.
+function waNumber(p){
+  var s=String(p||"").trim(), d=s.replace(/\D/g,"");
+  if(s.charAt(0)==="+") return d;
+  if(d.indexOf("00")===0) return d.slice(2);
+  if(d.charAt(0)==="0") return "44"+d.slice(1);
+  return d;
+}
 
 DAYS.forEach(function(d){ var o=document.createElement("option"); o.value=d; o.textContent=d+" Nov"; $("fDay").appendChild(o); });
 
@@ -267,16 +306,16 @@ function render(){
   var q=$("q").value.trim().toLowerCase(), d=$("fDay").value;
   var list=data.filter(function(r){ return (!d||dayKey(r)===d) && (!q||(r.name+" "+r.email+" "+(r.phone||"")+" "+String(r.phone||"").replace(/\D/g,"")).toLowerCase().indexOf(q)>=0); });
   $("rows").innerHTML=list.map(function(r){
-    var digits=String(r.phone||"").replace(/\D/g,"");
+    var digits=waNumber(r.phone);
     var phoneHtml=r.phone
       ? '<div class="ph"><a class="mail" href="tel:'+esc(r.phone.replace(/[^\d+]/g,""))+'">'+esc(r.phone)+'</a><a class="wa" href="https://wa.me/'+digits+'" target="_blank" rel="noopener" title="WhatsApp '+esc(r.name)+'">WhatsApp</a></div>'
       : '<div class="sub">No mobile number</div>';
     return '<tr><td><div class="nm">'+esc(r.name)+'</div><a class="mail" href="mailto:'+esc(r.email)+'">'+esc(r.email)+'</a>'+phoneHtml+'</td>'
-      +'<td><span class="day">'+esc(dayKey(r))+' Nov</span></td>'
-      +'<td>'+((r.interests||[]).map(function(t){return '<span class="chip">'+esc(t)+'</span>'}).join("")||'<span class="sub">–</span>')+'</td>'
-      +'<td>'+(r.invitedAs?esc(r.invitedAs):'<span class="sub">General link</span>')+'</td>'
-      +'<td>'+fmt.format(new Date(r.createdAt))+(r.submissions>1?'<div class="sub">updated '+fmt.format(new Date(r.updatedAt))+'</div>':'')+'</td>'
-      +'<td><button class="del" type="button" data-id="'+r._id+'" data-n="'+esc(r.name)+'" title="Delete">Delete</button></td></tr>';
+      +'<td data-l="Day"><span class="day">'+esc(dayKey(r))+' Nov</span></td>'
+      +'<td data-l="Interests">'+((r.interests||[]).map(function(t){return '<span class="chip">'+esc(t)+'</span>'}).join("")||'<span class="sub">–</span>')+'</td>'
+      +'<td data-l="Invited as">'+(r.invitedAs?esc(r.invitedAs):'<span class="sub">General link</span>')+'</td>'
+      +'<td data-l="Received">'+fmt.format(new Date(r.createdAt))+(r.submissions>1?'<div class="sub">updated '+fmt.format(new Date(r.updatedAt))+'</div>':'')+'</td>'
+      +'<td class="act"><button class="del" type="button" data-id="'+r._id+'" data-n="'+esc(r.name)+'" title="Delete">Delete</button></td></tr>';
   }).join("");
   $("empty").hidden=list.length>0;
   if(!data.length) $("empty").innerHTML="<b>No RSVPs yet</b>They'll show up here the moment someone sends the form.";
